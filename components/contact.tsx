@@ -33,8 +33,8 @@ export default function Contact() {
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
         Please contact me directly at{" "}
-        <a className="underline" href="mailto:example@gmail.com">
-          example@gmail.com
+        <a className="underline" href="mailto:hello@ucaronur.com">
+          hello@ucaronur.com
         </a>{" "}
         or through this form.
       </p>
@@ -67,7 +67,11 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <SubmitBtn />
+
+        <div className="flex justify-center mt-3">
+          <SubmitBtn />
+        </div>
+
       </form>
     </motion.section>
   );

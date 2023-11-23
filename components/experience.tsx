@@ -2,64 +2,65 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
+import { Flowbite, Timeline } from "flowbite-react";
+import { HiAcademicCap } from "react-icons/hi";
+import { HiBriefcase } from "react-icons/hi";
+import type { CustomFlowbiteTheme } from "flowbite-react";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
   const { theme } = useTheme();
 
+  // Customizing the timeline component in Flowbite
+  // https://www.flowbite-react.com/docs/components/timeline
+  // https://www.flowbite-react.com/docs/customize/theme
+  const customTimelinePointTheme: CustomFlowbiteTheme = {
+    timeline: {
+      item: {
+        point: {
+          marker: {
+            icon: {
+              base: "h-5 w-5",
+              wrapper:
+                "absolute -left-3 flex h-5 w-5 items-center justify-center rounded-full text-white bg-gray-950 ring-gray-950 ring-8 dark:bg-white dark:ring-white dark:text-gray-950", 
+            },
+          },
+        },
+      },
+    },
+  };
+
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline lineColor="">
-        {experiencesData.map(
-          (item, index) => (
-
-            (
-              <React.Fragment key={index}>
-                <VerticalTimelineElement
-                  contentStyle={{
-                    background:
-                      theme === "light"
-                        ? "#f3f4f6"
-                        : "rgba(255, 255, 255, 0.05)",
-                    boxShadow: "none",
-                    border: "1px solid rgba(0, 0, 0, 0.05)",
-                    textAlign: "left",
-                    padding: "1.3rem 2rem",
-                  }}
-                  contentArrowStyle={{
-                    borderRight:
-                      theme === "light"
-                        ? "0.4rem solid #9ca3af"
-                        : "0.4rem solid rgba(255, 255, 255, 0.5)",
-                  }}
-                  date={item.date}
-                  icon={item.icon}
-                  iconStyle={{
-                    background:
-                      theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
-                    fontSize: "1.5rem",
-                  }}
-                >
-                  <h3 className="font-semibold capitalize">{item.title}</h3>
-                  <p className="font-normal !mt-0">{item.location}</p>
-                  <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                    {item.description}
-                  </p>
-                </VerticalTimelineElement>
-              </React.Fragment>
-            )
-          )
-        )}
-      </VerticalTimeline>
+      <Flowbite theme={{ theme: customTimelinePointTheme }}>
+        <Timeline>
+          {experiencesData.map((item, index) => (
+            <Timeline.Item key={index}>
+              {item.icon === "work" ? (
+                <Timeline.Point icon={HiBriefcase} />
+              ) : (
+                <Timeline.Point icon={HiAcademicCap} />
+              )}
+              <Timeline.Content>
+                <Timeline.Time>February 2022</Timeline.Time>
+                <Timeline.Title>
+                  Application UI code in Tailwind CSS
+                </Timeline.Title>
+                <Timeline.Body>
+                  Get access to over 20+ pages including a dashboard layout,
+                  charts, kanban board, calendar, and pre-order E-commerce &
+                  Marketing pages.
+                </Timeline.Body>
+              </Timeline.Content>
+            </Timeline.Item>
+          ))}
+        </Timeline>
+      </Flowbite>
     </section>
   );
 }
