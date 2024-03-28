@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { FollowerPointerCard } from "./following-pointer";
+import { AnimatedTooltip } from "./animated-tooltip";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -21,6 +21,24 @@ export default function Project({
   });
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const people = [
+    {
+      id: 1,
+      name: "John Doe",
+      image:
+        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+    },
+  ];
+
+  const tags2 =  [
+    {
+      id: 1,
+      name: "React",
+      image: ""
+    }
+  ];
+
+  const t = projectsData[0].tags;
 
   return (
     <motion.div
@@ -39,15 +57,9 @@ export default function Project({
           <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
             {description}
           </p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
+          <ul className="flex flex-wrap mt-4 mb-4 gap-1 sm:mt-auto">
+          <AnimatedTooltip items={projectsData[0].tags} />
+
           </ul>
         </div>
 
