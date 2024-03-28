@@ -4,6 +4,7 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import { FollowerPointerCard } from "./following-pointer";
 
 export default function About() {
   const { ref } = useSectionInView("About");
@@ -19,6 +20,7 @@ export default function About() {
     >
 
 
+    <FollowerPointerCard>
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
         After graduating with a degree in{" "}
@@ -46,6 +48,8 @@ export default function About() {
         <span className="font-medium">history and philosophy</span>. I'm also
         learning how to play the guitar.
       </p>
+      </FollowerPointerCard>
     </motion.section>
+    
   );
 }
