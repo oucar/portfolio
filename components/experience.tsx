@@ -10,6 +10,8 @@ import { Flowbite, Timeline } from "flowbite-react";
 import { HiAcademicCap } from "react-icons/hi";
 import { HiBriefcase } from "react-icons/hi";
 import type { CustomFlowbiteTheme } from "flowbite-react";
+import { motion } from "framer-motion";
+
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
@@ -35,6 +37,22 @@ export default function Experience() {
   };
 
   return (
+    <motion.section
+    id="experience"
+    ref={ref}
+    initial={{
+      opacity: 0,
+    }}
+    whileInView={{
+      opacity: 1,
+    }}
+    transition={{
+      duration: 1,
+    }}
+    viewport={{
+      once: true,
+    }}
+  >
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My experience</SectionHeading>
       <Flowbite theme={{ theme: customTimelinePointTheme }}>
@@ -62,5 +80,6 @@ export default function Experience() {
         </Timeline>
       </Flowbite>
     </section>
+    </motion.section>
   );
 }
