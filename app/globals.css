@@ -13,3 +13,8 @@ html.dark {
 .borderBlack {
   @apply border border-black/10;
 }
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

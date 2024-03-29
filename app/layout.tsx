@@ -31,7 +31,7 @@ export default function RootLayout({
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            <TracingBeam>
+            <TracingBeam className="">
               <Header />
               {children}
               <Footer />
