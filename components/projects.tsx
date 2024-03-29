@@ -12,7 +12,7 @@ import {
 
 export default function Projects() {
   return (
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] mb-28">
+    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] mb-40">
       {items.map((item, i) => (
         <BentoGridItem
           key={i}
