@@ -6,6 +6,7 @@ import ThemeContextProvider from "@/context/theme-context";
 import ThemeSwitch from "@/components/theme-switch";
 import Footer from "@/components/footer";
 import { Toaster } from "react-hot-toast";
+import { TracingBeam } from "@/components/tracing-beam";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,9 +31,11 @@ export default function RootLayout({
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            <Header />
-            {children}
-            <Footer />
+            <TracingBeam>
+              <Header />
+              {children}
+              <Footer />
+            </TracingBeam>
 
             <Toaster position="top-right" />
             <ThemeSwitch />
