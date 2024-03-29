@@ -17,38 +17,27 @@ export const TracingBeam = ({
 
   const contentRef = useRef<HTMLDivElement>(null);
   const [svgHeight, setSvgHeight] = useState(0);
-
-  const useWindowSize = () => {
-    const [windowSize, setWindowSize] = useState({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-
-    useEffect(() => {
-      const handleResize = () => {
-        setWindowSize({
-          width: window.innerWidth,
-          height: window.innerHeight,
-        });
-      };
-
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, []);
-
-    return windowSize;
-  };
-
-  const { width } = useWindowSize();
+  // Initialize with current window width
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth); 
 
   useEffect(() => {
     if (contentRef.current) {
       setSvgHeight(contentRef.current.offsetHeight);
     }
-  }, [width, contentRef.current]);
+
+    // Update window width when resized
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const y1 = useSpring(
     useTransform(scrollYProgress, [0, 0.8], [50, svgHeight]),
@@ -67,7 +56,7 @@ export const TracingBeam = ({
 
   return (
     <div className="relative">
-      {width >= 980 && (
+      {windowWidth > 980 && (
         <motion.div
           ref={ref}
           className="absolute left-0 top-0 w-full h-full pointer-events-none"
