@@ -7,6 +7,11 @@ import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
+import {
+  TextRevealCard,
+  TextRevealCardDescription,
+  TextRevealCardTitle,
+} from "./text-reveal-card";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -30,7 +35,6 @@ export default function Contact() {
       }}
     >
       <SectionHeading>Contact me</SectionHeading>
-
       <p className="text-gray-700 -mt-6 dark:text-white/80">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:hello@ucaronur.com">
@@ -71,7 +75,6 @@ export default function Contact() {
         <div className="flex justify-center mt-3">
           <SubmitBtn />
         </div>
-
       </form>
     </motion.section>
   );
