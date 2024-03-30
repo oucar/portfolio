@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
@@ -10,37 +10,37 @@ export const TracingBeam = ({
   className?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  const contentRef = useRef<HTMLDivElement>(null);
   const [svgHeight, setSvgHeight] = useState(0);
-  // Initialize with current window width
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth); 
+  const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);
 
   useEffect(() => {
-    if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight);
-    }
-
-    // Update window width when resized
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    // Add event listener for window resize
+    handleResize(); // Initialize window width on mount
+
     window.addEventListener("resize", handleResize);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
+  useEffect(() => {
+    if (contentRef.current) {
+      setSvgHeight(contentRef.current.offsetHeight);
+    }
+  }, [contentRef.current]);
+
   const y1 = useSpring(
-    useTransform(scrollYProgress, [0, 0.8], [50, svgHeight + 400]),
+    useTransform(scrollYProgress, [0, 0.8], [50, svgHeight + 600]),
     {
       stiffness: 500,
       damping: 90,
@@ -56,7 +56,7 @@ export const TracingBeam = ({
 
   return (
     <div className="relative">
-      {windowWidth > 980 && (
+      {typeof window !== "undefined" && windowWidth !== undefined && windowWidth > 980 && (
         <motion.div
           ref={ref}
           className="absolute left-0 top-0 w-full h-full pointer-events-none"
