@@ -60,7 +60,7 @@ export default function Experience() {
       <section
         id="experience"
         ref={ref}
-        className="scroll-mt-28 mb-28 sm:mb-40"
+        className="scroll-mt-28 px-5 sm:px-28 mb-28 sm:mb-40"
       >
         <SectionHeading>My experience</SectionHeading>
         <Flowbite theme={{ theme: customTimelinePointTheme }}>
@@ -89,10 +89,10 @@ export default function Experience() {
         </Flowbite>
       </section>
 
-      <div className="flex items-center justify-center rounded-2xl mb-28 w-full">
+      <div className="flex items-center justify-center rounded-2xl mb-28  w-full">
         <TextRevealCard
           text="You know the business"
-          revealText="I know the chemistry "
+          revealText="I know the chemistry"
         >
           <TextRevealCardTitle>
             It's easy when you find the right person.
@@ -100,7 +100,7 @@ export default function Experience() {
           <TextRevealCardDescription>
             "Success is no accident. It is hard work, perseverance, learning,
             studying, sacrifice, and most of all, love of what you are doing or
-            learning to do.{" "}
+            learning to do."{" "}
           </TextRevealCardDescription>
         </TextRevealCard>
       </div>

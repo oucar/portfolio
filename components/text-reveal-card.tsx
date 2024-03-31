@@ -67,13 +67,13 @@ export const TextRevealCard = ({
       onTouchMove={touchMoveHandler}
       ref={cardRef}
       className={cn(
-        "bg-white/10 border border-white/[0.08] w-[40rem] rounded-lg p-8 relative overflow-hidden",
+        "bg-white/10 border border-white/[0.08] w-11/12 sm:w-[40rem] rounded-lg p-8 relative overflow-hidden",
         className
       )}
     >
       {children}
 
-      <div className="h-40  relative flex items-center overflow-hidden">
+      <div className="h-40 sm:text-[rem] relative flex items-center overflow-hidden">
         <motion.div
           style={{
             width: "100%",
@@ -89,14 +89,15 @@ export const TextRevealCard = ({
                 }
           }
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          // bg color 
+          // bg color
           className="absolute bg-[#111827] z-20  will-change-transform"
         >
           <p
             style={{
               textShadow: "4px 4px 15px rgba(0,0,0,0.5)",
             }}
-            className="text-base sm:text-[3rem] py-10 font-bold text-white bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300"
+            // on hover - text reveal
+            className="text-4xl sm:text-[3rem] text-center py-10 font-bold text-white bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300"
           >
             {revealText}
           </p>
@@ -112,7 +113,8 @@ export const TextRevealCard = ({
         ></motion.div>
 
         <div className=" overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
-          <p className="text-base sm:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#ffffff84]">
+          {/* when not on hover - text reveal */}
+          <p className="text-4xl text-center sm:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#ffffff84]">
             {text}
           </p>
           <MemoizedStars />
