@@ -1,5 +1,5 @@
-"use client";
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import { BentoGrid, BentoGridItem } from "./bento-grid";
 import {
   IconClipboardCopy,
@@ -9,15 +9,36 @@ import {
 } from "@tabler/icons-react";
 import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
+import { Button, Modal } from "flowbite-react";
+
+interface Item {
+  title: string;
+  description: string;
+  detailedDescription: string; // Add detailedDescription property
+  header: React.ReactNode;
+  className: string;
+  icon: React.ReactNode;
+}
 
 export default function Projects() {
   const { ref } = useSectionInView("Skills");
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null); 
+
+  const openModalWithItem = (item: Item) => {
+    setSelectedItem(item);
+    setOpenModal(true);
+  };
+
+  const closeModal = () => {
+    setOpenModal(false);
+  };
 
   return (
     <section id="projects" className="scroll-mt-28">
       <SectionHeading>Projects</SectionHeading>
 
-      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] mb-40" >
+      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] mb-40">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -26,19 +47,32 @@ export default function Projects() {
             header={item.header}
             className={item.className}
             icon={item.icon}
+            onClick={() => openModalWithItem(item)}
           />
         ))}
       </BentoGrid>
+      <Modal dismissible show={openModal} onClose={closeModal} className="bg-slate-700">
+        <Modal.Header className="bg-[#111827]">{selectedItem && selectedItem.title}</Modal.Header>
+        <Modal.Body className="bg-[#111827]">
+          {selectedItem && selectedItem.detailedDescription}
+        </Modal.Body>
+        <Modal.Footer className="flex justify-center bg-[#111827]">
+          <Button outline gradientDuoTone="purpleToBlue" onClick={closeModal}>Close</Button>
+        </Modal.Footer>
+      </Modal>
     </section>
   );
 }
+
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
 );
-const items = [
+
+const items: Item[] = [
   {
     title: "The Dawn of Innovation",
     description: "Explore the birth of groundbreaking ideas and inventions.",
+    detailedDescription: "This is a detailed description for The Dawn of Innovation",
     header: <Skeleton />,
     className: "md:col-span-2",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
@@ -47,6 +81,7 @@ const items = [
     title: "The Digital Revolution",
     description:
       "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
+    detailedDescription: "This is a detailed description for The Digital Revolution",
     header: <Skeleton />,
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
@@ -54,6 +89,7 @@ const items = [
   {
     title: "The Art of Design",
     description: "Discover the beauty of thoughtful and functional design.",
+    detailedDescription: "This is a detailed description for The Art of Design",
     header: <Skeleton />,
     className: "md:col-span-1",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
@@ -62,6 +98,7 @@ const items = [
     title: "The Power of Communication",
     description:
       "Understand the impact of effective communication in our lives.",
+    detailedDescription: "This is a detailed description for The Power of Communication",
     header: <Skeleton />,
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
