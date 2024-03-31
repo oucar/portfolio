@@ -3,10 +3,6 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { TypewriterEffectSmooth } from "./typewriter-effect";
@@ -79,8 +75,10 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hello, I'm Onur.</span>
-        <TypewriterEffectSmooth words={words} />
       </motion.h1>
+
+      <TypewriterEffectSmooth words={words} />
+
 
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
@@ -90,7 +88,6 @@ export default function Intro() {
           delay: 0.1,
         }}
       >
-        {/* Remaining code unchanged */}
       </motion.div>
     </section>
   );

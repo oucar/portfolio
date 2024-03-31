@@ -56,7 +56,8 @@ export default function Experience() {
       viewport={{
         once: true,
       }}
-    >
+      className="scroll-mt-28"
+      >
       <section
         id="experience"
         ref={ref}

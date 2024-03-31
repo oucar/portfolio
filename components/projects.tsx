@@ -1,29 +1,35 @@
+"use client";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "./bento-grid";
 import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
   IconClipboardCopy,
   IconFileBroken,
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
+import SectionHeading from "./section-heading";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Projects() {
+  const { ref } = useSectionInView("Skills");
+
   return (
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] mb-40">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          className={item.className}
-          icon={item.icon}
-        />
-      ))}
-    </BentoGrid>
+    <section id="projects" className="scroll-mt-28">
+      <SectionHeading>Projects</SectionHeading>
+
+      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] mb-40" >
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            title={item.title}
+            description={item.description}
+            header={item.header}
+            className={item.className}
+            icon={item.icon}
+          />
+        ))}
+      </BentoGrid>
+    </section>
   );
 }
 const Skeleton = () => (
@@ -39,7 +45,8 @@ const items = [
   },
   {
     title: "The Digital Revolution",
-    description: "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",  
+    description:
+      "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
     header: <Skeleton />,
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
