@@ -14,7 +14,7 @@ import { Button, Modal } from "flowbite-react";
 interface Item {
   title: string;
   description: string;
-  detailedDescription: string; // Add detailedDescription property
+  detailedDescription: string;
   header: React.ReactNode;
   className: string;
   icon: React.ReactNode;
@@ -74,7 +74,7 @@ const items: Item[] = [
     description: "Explore the birth of groundbreaking ideas and inventions.",
     detailedDescription: "This is a detailed description for The Dawn of Innovation",
     header: <Skeleton />,
-    className: "md:col-span-2",
+    className: "md:col-span-3",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -91,7 +91,7 @@ const items: Item[] = [
     description: "Discover the beauty of thoughtful and functional design.",
     detailedDescription: "This is a detailed description for The Art of Design",
     header: <Skeleton />,
-    className: "md:col-span-1",
+    className: "md:col-span-2",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -103,4 +103,49 @@ const items: Item[] = [
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
+  {
+    title: "The Power of Communication",
+    description:
+      "Understand the impact of effective communication in our lives.",
+    detailedDescription: "This is a detailed description for The Power of Communication",
+    header: <Skeleton />,
+    className: "md:col-span-1",
+    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    title: "The Power of Communication",
+    description:
+      "Understand the impact of effective communication in our lives.",
+    detailedDescription: "This is a detailed description for The Power of Communication",
+    header: <Skeleton />,
+    className: "md:col-span-1",
+    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    title: "The Power of Communication",
+    description:
+      "Understand the impact of effective communication in our lives.",
+    detailedDescription: "This is a detailed description for The Power of Communication",
+    header: <Skeleton />,
+    className: "md:col-span-2",
+    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    title: "The Power of Communication",
+    description:
+      "Understand the impact of effective communication in our lives.",
+    detailedDescription: "This is a detailed description for The Power of Communication",
+    header: <Skeleton />,
+    className: "md:col-span-2",
+    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    title: "The Power of Communication",
+    description:
+      "Understand the impact of effective communication in our lives.",
+    detailedDescription: "This is a detailed description for The Power of Communication",
+    header: <Skeleton />,
+    className: "md:col-span-1",
+    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+  }
 ];
