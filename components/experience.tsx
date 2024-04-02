@@ -90,7 +90,7 @@ export default function Experience() {
         </Flowbite>
       </section>
 
-      <div className="flex items-center justify-center rounded-2xl mb-28  w-full">
+      <div className="dark:flex items-center justify-center rounded-2xl mb-28 w-full hidden">
         <TextRevealCard
           text="You know the business"
           revealText="I know the chemistry"
