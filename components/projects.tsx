@@ -52,11 +52,11 @@ export default function Projects() {
         ))}
       </BentoGrid>
       <Modal dismissible show={openModal} onClose={closeModal} className="bg-slate-700">
-        <Modal.Header className="bg-[#111827]">{selectedItem && selectedItem.title}</Modal.Header>
-        <Modal.Body className="bg-[#111827]">
+        <Modal.Header className="dark:bg-[#111827]">{selectedItem && selectedItem.title}</Modal.Header>
+        <Modal.Body className="dark:bg-[#111827]">
           {selectedItem && selectedItem.detailedDescription}
         </Modal.Body>
-        <Modal.Footer className="flex justify-center bg-[#111827]">
+        <Modal.Footer className="flex justify-center dark:bg-[#111827]">
           <Button outline gradientDuoTone="purpleToBlue" onClick={closeModal}>Close</Button>
         </Modal.Footer>
       </Modal>
