@@ -38,31 +38,36 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        After graduating with a degree in{" "}
-        <span className="font-medium">Accounting</span>, I decided to pursue my
-        passion for programming. I enrolled in a coding bootcamp and learned{" "}
-        <span className="font-medium">full-stack web development</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
-        <span className="font-medium">
-          React, Next.js, Node.js, and MongoDB
-        </span>
-        . I am also familiar with TypeScript and Prisma. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a software
-        developer.
-      </p>
+  After completing my education at Purdue University with a degree in{" "}
+  <span className="font-medium">Computer Science</span> and a minor in{" "}
+  <span className="font-medium">Mathematics</span>, I delved into the realm of
+  software development. My journey began with a profound interest in
+  problem-solving, leading me to master technologies such as{" "}
+  <span className="font-medium">React</span>,{" "}
+  <span className="font-medium">Next.js</span>,{" "}
+  <span className="font-medium">Node.js</span>, and{" "}
+  <span className="font-medium">MongoDB</span>, {" "}
+  and <span className="font-medium">many more!</span> Proficient in{" "}
+  <span className="font-medium">TypeScript</span> and{" "}
+  <span className="font-medium">C#</span>, I am committed to continuous learning
+  and am eager to explore emerging technologies in the software industry.
+</p>
 
-      <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games, watching movies, and playing with my dog. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        learning about{" "}
-        <span className="font-medium">history and philosophy</span>. I'm also
-        learning how to play the guitar.
-      </p>
+<p>
+  Outside of coding, I embrace a diverse range of interests and activities.
+  Originating from Türkiye, I have a deep appreciation for nature and enjoy{" "}
+  <span className="font-medium">kayaking</span> in serene waters. I am also
+  passionate about <span className="font-medium">3D printing</span> and{" "}
+  <span className="font-medium">photography</span>, using these mediums to
+  express creativity and capture memorable moments. In my pursuit of knowledge,
+  I delve into subjects such as <span className="font-medium">history</span> and{" "}
+  <span className="font-medium">philosophy</span>, constantly seeking to broaden
+  my understanding of the world. Additionally, I find solace in{" "}
+  <span className="font-medium">playing analog synthesizers and drums!</span>.
+  Spending quality time with my cat is also one of my favorite comforting
+  activities.
+</p>
+
 
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800 sm:mt-8">
         {socialIcons.map((socialIcon, index) => (
