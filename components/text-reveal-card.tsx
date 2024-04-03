@@ -67,7 +67,7 @@ export const TextRevealCard = ({
       onTouchMove={touchMoveHandler}
       ref={cardRef}
       className={cn(
-        "bg-white/10 border border-white/[0.08] w-11/12 sm:w-[40rem] rounded-lg p-8 relative overflow-hidden",
+        "dark:bg-white/10 border dark:border-white/[0.08] bg-white w-11/12 sm:w-[40rem] rounded-lg p-8 relative overflow-hidden",
         className
       )}
     >
@@ -114,7 +114,7 @@ export const TextRevealCard = ({
 
         <div className=" overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
           {/* when not on hover - text reveal */}
-          <p className="text-4xl text-center sm:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#ffffff84]">
+          <p className="text-4xl text-center sm:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#111827] dark:bg-[#ffffff84]">
             {text}
           </p>
           <MemoizedStars />
@@ -132,7 +132,7 @@ export const TextRevealCardTitle = ({
   className?: string;
 }) => {
   return (
-    <h2 className={twMerge("text-white text-lg mb-2", className)}>
+    <h2 className={twMerge("text-[#111827] dark:text-white text-lg mb-2", className)}>
       {children}
     </h2>
   );
@@ -146,7 +146,7 @@ export const TextRevealCardDescription = ({
   className?: string;
 }) => {
   return (
-    <p className={twMerge("text-[#a9a9a9] text-sm", className)}>{children}</p>
+    <p className={twMerge(" text-[#111827ba] dark:text-[#a9a9a9] text-sm", className)}>{children}</p>
   );
 };
 
