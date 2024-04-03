@@ -79,10 +79,12 @@ export default function Experience() {
                     {item.title} ∙ {item.location}
                   </Timeline.Title>
                   <Timeline.Body>
-                    Get access to over 20+ pages including a dashboard layout,
-                    charts, kanban board, calendar, and pre-order E-commerce &
-                    Marketing pages.
-                  </Timeline.Body>
+                    {item.description.map((point, index) => (
+                      <div key={index}>
+                        <p>{point}</p>
+                      </div>
+                    ))}
+                  </Timeline.Body>{" "}
                 </Timeline.Content>
               </Timeline.Item>
             ))}
