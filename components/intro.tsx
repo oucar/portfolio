@@ -4,32 +4,33 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/active-section-context";
-import { TypewriterEffectSmooth } from "./typewriter-effect";
-import OnurPortrait from "../public/onur.png"
+import OnurPortrait from "../public/onur.png";
+import { FaGithub, FaLinkedinIn, FaStackOverflow } from "react-icons/fa";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
-  const words = [
+  const socialIcons = [
     {
-      text: "I love",
+      icon: <FaLinkedinIn />,
+      url: "https://www.linkedin.com/in/oucar/",
     },
     {
-      text: "solving",
+      icon: <FaGithub />,
+      url: "https://github.com/oucar",
     },
     {
-      text: "complex",
-    },
-    {
-      text: "problems!",
+      icon: <FaStackOverflow />,
+      url: "https://stackoverflow.com/users/12389133/onur",
     },
   ];
 
+  const handleIconClick = (url: any) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <section
-      ref={ref}
       id="home"
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
@@ -42,6 +43,7 @@ export default function Intro() {
               type: "tween",
               duration: 0.2,
             }}
+            ref={ref}
           >
             <Image
               src={OnurPortrait}
@@ -78,7 +80,23 @@ export default function Intro() {
         <span className="font-bold">Hello, I'm Onur.</span>
       </motion.h1>
 
-      <TypewriterEffectSmooth words={words} />
+      <motion.ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800 sm:mt-8">
+        {socialIcons.map((socialIcon, index) => (
+          <motion.li
+            key={index}
+            className="bg-white borderBlack rounded-3xl px-3 py-3 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/20 transition-colors duration-200"
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            onClick={() => handleIconClick(socialIcon.url)}
+            style={{ cursor: "pointer" }}
+          >
+            {socialIcon.icon}
+          </motion.li>
+        ))}
+      </motion.ul>
 
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
@@ -87,8 +105,7 @@ export default function Intro() {
         transition={{
           delay: 0.1,
         }}
-      >
-      </motion.div>
+      ></motion.div>
     </section>
   );
 }

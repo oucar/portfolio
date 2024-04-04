@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { BentoGrid, BentoGridItem } from "./bento-grid";
 import {
@@ -10,6 +10,7 @@ import {
 import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import { Button, Modal } from "flowbite-react";
+import { motion } from "framer-motion";
 
 interface Item {
   title: string;
@@ -21,9 +22,9 @@ interface Item {
 }
 
 export default function Projects() {
-  const { ref } = useSectionInView("Skills");
+  const { ref } = useSectionInView("Projects");
   const [openModal, setOpenModal] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<Item | null>(null); 
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
   const openModalWithItem = (item: Item) => {
     setSelectedItem(item);
@@ -33,31 +34,41 @@ export default function Projects() {
   const closeModal = () => {
     setOpenModal(false);
   };
-
   return (
     <section id="projects" className="scroll-mt-28">
-      <SectionHeading>Projects</SectionHeading>
-
+      <motion.section>
+        <SectionHeading>Projects</SectionHeading>
+      </motion.section>
       <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] mb-40">
         {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            className={item.className}
-            icon={item.icon}
-            onClick={() => openModalWithItem(item)}
-          />
+            <BentoGridItem
+              key={i}
+              title={item.title}
+              description={item.description}
+              header={item.header}
+              className={item.className}
+              icon={item.icon}
+              onClick={() => openModalWithItem(item)}
+              ref={i === 0 ? ref : null}
+            />
         ))}
       </BentoGrid>
-      <Modal dismissible show={openModal} onClose={closeModal} className="bg-slate-700">
-        <Modal.Header className="dark:bg-[#111827]">{selectedItem && selectedItem.title}</Modal.Header>
+      <Modal
+        dismissible
+        show={openModal}
+        onClose={closeModal}
+        className="bg-slate-700"
+      >
+        <Modal.Header className="dark:bg-[#111827]">
+          {selectedItem && selectedItem.title}
+        </Modal.Header>
         <Modal.Body className="dark:bg-[#111827]">
           {selectedItem && selectedItem.detailedDescription}
         </Modal.Body>
         <Modal.Footer className="flex justify-center dark:bg-[#111827]">
-          <Button outline gradientDuoTone="purpleToBlue" onClick={closeModal}>Close</Button>
+          <Button outline gradientDuoTone="purpleToBlue" onClick={closeModal}>
+            Close
+          </Button>
         </Modal.Footer>
       </Modal>
     </section>
@@ -72,7 +83,8 @@ const items: Item[] = [
   {
     title: "The Dawn of Innovation",
     description: "Explore the birth of groundbreaking ideas and inventions.",
-    detailedDescription: "This is a detailed description for The Dawn of Innovation",
+    detailedDescription:
+      "This is a detailed description for The Dawn of Innovation",
     header: <Skeleton />,
     className: "md:col-span-3",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
@@ -81,7 +93,8 @@ const items: Item[] = [
     title: "The Digital Revolution",
     description:
       "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
-    detailedDescription: "This is a detailed description for The Digital Revolution",
+    detailedDescription:
+      "This is a detailed description for The Digital Revolution",
     header: <Skeleton />,
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
@@ -98,7 +111,8 @@ const items: Item[] = [
     title: "The Power of Communication",
     description:
       "Understand the impact of effective communication in our lives.",
-    detailedDescription: "This is a detailed description for The Power of Communication",
+    detailedDescription:
+      "This is a detailed description for The Power of Communication",
     header: <Skeleton />,
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
@@ -107,7 +121,8 @@ const items: Item[] = [
     title: "The Power of Communication",
     description:
       "Understand the impact of effective communication in our lives.",
-    detailedDescription: "This is a detailed description for The Power of Communication",
+    detailedDescription:
+      "This is a detailed description for The Power of Communication",
     header: <Skeleton />,
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
@@ -116,7 +131,8 @@ const items: Item[] = [
     title: "The Power of Communication",
     description:
       "Understand the impact of effective communication in our lives.",
-    detailedDescription: "This is a detailed description for The Power of Communication",
+    detailedDescription:
+      "This is a detailed description for The Power of Communication",
     header: <Skeleton />,
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
@@ -125,7 +141,8 @@ const items: Item[] = [
     title: "The Power of Communication",
     description:
       "Understand the impact of effective communication in our lives.",
-    detailedDescription: "This is a detailed description for The Power of Communication",
+    detailedDescription:
+      "This is a detailed description for The Power of Communication",
     header: <Skeleton />,
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
@@ -134,7 +151,8 @@ const items: Item[] = [
     title: "The Power of Communication",
     description:
       "Understand the impact of effective communication in our lives.",
-    detailedDescription: "This is a detailed description for The Power of Communication",
+    detailedDescription:
+      "This is a detailed description for The Power of Communication",
     header: <Skeleton />,
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
@@ -143,9 +161,10 @@ const items: Item[] = [
     title: "The Power of Communication",
     description:
       "Understand the impact of effective communication in our lives.",
-    detailedDescription: "This is a detailed description for The Power of Communication",
+    detailedDescription:
+      "This is a detailed description for The Power of Communication",
     header: <Skeleton />,
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-  }
+  },
 ];

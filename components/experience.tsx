@@ -42,8 +42,6 @@ export default function Experience() {
 
   return (
     <motion.section
-      id="experience"
-      ref={ref}
       initial={{
         opacity: 0,
       }}
@@ -57,13 +55,13 @@ export default function Experience() {
         once: true,
       }}
       className="scroll-mt-28"
+      id="experience"
     >
-      <section
-        id="experience"
-        ref={ref}
-        className="scroll-mt-28 px-5 sm:px-28 mb-28 sm:mb-40"
-      >
-        <SectionHeading>My experience</SectionHeading>
+      <section className="scroll-mt-28 px-5 sm:px-28 mb-28 sm:mb-40">
+        <motion.section ref={ref}>
+          <SectionHeading>My experience</SectionHeading>
+        </motion.section>
+
         <Flowbite theme={{ theme: customTimelinePointTheme }}>
           <Timeline>
             {experiencesData.map((item, index) => (
