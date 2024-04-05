@@ -12,8 +12,7 @@ import {
 } from "@tabler/icons-react";
 import SectionHeading from "./section-heading";
 import GodotImage from "@/public/godot_doomlike.png";
-import Onur from "@/public/onur.png";
-import GodotGif from "@/public/godot_doomlike.gif";
+import GodotGif from "@/public/godot_doom.gif";
 
 interface Item {
   title: string;
