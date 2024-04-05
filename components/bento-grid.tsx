@@ -28,14 +28,14 @@ export const BentoGridItem = React.forwardRef(
       description,
       header,
       icon,
-      onClick // Add onClick prop
+      onClick 
     }: {
       className?: string;
       title?: string | React.ReactNode;
       description?: string | React.ReactNode;
       header?: React.ReactNode;
       icon?: React.ReactNode;
-      onClick?: () => void; // Define onClick prop
+      onClick?: () => void;
     },
     ref: React.Ref<HTMLDivElement>
   ) => {
@@ -47,7 +47,7 @@ export const BentoGridItem = React.forwardRef(
 
     return (
       <div
-        ref={ref} // Pass ref to the div
+        ref={ref}
         className={cn(
           "row-span-1 rounded-xl h-[350px] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
           className

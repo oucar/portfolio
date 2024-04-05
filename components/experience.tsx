@@ -76,7 +76,7 @@ export default function Experience() {
                   <Timeline.Title>
                     {item.title} ∙ {item.location}
                   </Timeline.Title>
-                  <Timeline.Body>
+                  <Timeline.Body className="leading-7">
                     {item.description.map((point, index) => (
                       <div key={index}>
                         <p>{point}</p>
