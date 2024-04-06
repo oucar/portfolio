@@ -13,6 +13,8 @@ import {
 import SectionHeading from "./section-heading";
 import GodotImage from "@/public/godot_doomlike.png";
 import GodotGif from "@/public/godot_doom.gif";
+import LentilJSX from "@/public/lentil-jsx.png";
+import LentilJSXGif from "@/public/lentil-jsx.gif";
 
 interface Item {
   title: string;
@@ -90,22 +92,21 @@ const Skeleton = ({
 
   return (
     <div
-      className="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"
+      className="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <img
         src={imageSrc}
         alt="Project Image"
-        className="object-cover w-full h-full rounded-xl"
+        className="object-cover w-full h-full rounded-xl transition-opacity duration-300 ease-in-out"
+        style={{ opacity: isHovered ? 0 : 1 }}
       />
-      {isHovered && (
-        <img
-          src={gifSrc}
-          alt="Project Gif"
-          className="absolute inset-0 object-cover w-full h-full rounded-xl"
-        />
-      )}
+      <img
+        src={isHovered ? gifSrc : ""}
+        className="absolute inset-0 object-cover w-full h-full rounded-xl transition-opacity duration-0 ease-in-out"
+        style={{ opacity: isHovered ? 1 : 0 }}
+      />
     </div>
   );
 };
@@ -116,11 +117,11 @@ const items: Item[] = [
     description: "Explore the birth of groundbreaking ideas and inventions.",
     detailedDescription:
       "This is a detailed description for The Dawn of Innovation",
-    header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
+    header: <Skeleton imageSrc={LentilJSX.src} gifSrc={LentilJSXGif.src} />,
     className: "md:col-span-3",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-    imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
-    gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
+    imageComponent: <img src={LentilJSX.src} alt="Lentil JSX Image" />,
+    gifComponent: <img src={LentilJSXGif.src} alt="Lentil JSX Gif" />,
   },
   {
     title: "The Digital Revolution",
