@@ -23,6 +23,10 @@ import Reactivities from "@/public/reactivities.png";
 import ReactivitiesGif from "@/public/reactivities.gif";
 import WatchNotes from "@/public/watch-notes.png";
 import WatchNotesGif from "@/public/watch-notes.gif";
+import WatchColor from "@/public/watch-color-app.png";
+import WatchColorGif from "@/public/watch-color-app.gif";
+import GodotFinal from "@/public/437-final.png";
+import GodotFinalGif from "@/public/437-final.gif";
 
 interface Item {
   title: string;
@@ -121,7 +125,7 @@ const Skeleton = ({
 
 const items: Item[] = [
   // 1555 * 451
-  // Lentil JSX 
+  // Lentil JSX
   {
     title: "The Dawn of Innovation",
     description: "Explore the birth of groundbreaking ideas and inventions.",
@@ -177,7 +181,9 @@ const items: Item[] = [
       "Understand the impact of effective communication in our lives.",
     detailedDescription:
       "This is a detailed description for The Power of Communication",
-    header: <Skeleton imageSrc={ReactColorApp.src} gifSrc={ReactColorAppGif.src} />,
+    header: (
+      <Skeleton imageSrc={ReactColorApp.src} gifSrc={ReactColorAppGif.src} />
+    ),
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={ReactColorApp.src} alt="React Color App Image" />,
@@ -190,11 +196,11 @@ const items: Item[] = [
       "Understand the impact of effective communication in our lives.",
     detailedDescription:
       "This is a detailed description for The Power of Communication",
-    header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
+    header: <Skeleton imageSrc={WatchColor.src} gifSrc={WatchColorGif.src} />,
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
-    gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
+    imageComponent: <img src={WatchColor.src} alt="Watch Color App Image" />,
+    gifComponent: <img src={WatchColorGif.src} alt="Watch Color App Gif" />,
   },
   // React activities
   {
@@ -203,7 +209,9 @@ const items: Item[] = [
       "Understand the impact of effective communication in our lives.",
     detailedDescription:
       "This is a detailed description for The Power of Communication",
-    header: <Skeleton imageSrc={Reactivities.src} gifSrc={ReactivitiesGif.src} />,
+    header: (
+      <Skeleton imageSrc={Reactivities.src} gifSrc={ReactivitiesGif.src} />
+    ),
     className: "md:col-span-3",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Reactivities.src} alt="React Activities Image" />,
@@ -222,41 +230,31 @@ const items: Item[] = [
     imageComponent: <img src={WatchNotes.src} alt="Watch Notes Image" />,
     gifComponent: <img src={WatchNotesGif.src} alt="Watch Notes Gif" />,
   },
-  // Campground Finder?
+  // 437 Final
   {
-    title: "Campground Finder",
+    title: "437 Finder",
     description:
       "Understand the impact of effective communication in our lives.",
     detailedDescription:
       "This is a detailed description for The Power of Communication",
-    header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
+    header: <Skeleton imageSrc={GodotFinal.src} gifSrc={GodotFinalGif.src} />,
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
     gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
   },
+  // School DB
   {
-    title: "School Chat",
-    description:
-      "Understand the impact of effective communication in our lives.",
-    detailedDescription:
-      "This is a detailed description for The Power of Communication",
-    header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
-    className: "md:col-span-1",
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
-    gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
-  },  {
     title: "School DB",
     description:
       "Understand the impact of effective communication in our lives.",
     detailedDescription:
       "This is a detailed description for The Power of Communication",
     header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
-    className: "md:col-span-2",
+    className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
     gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
   },
-  // School projects... maybe?
+  // Another APP - alg related
 ];
