@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Button, Modal } from "flowbite-react";
 import { useSectionInView } from "@/lib/hooks";
 import { BentoGrid, BentoGridItem } from "./bento-grid";
 import {
@@ -9,6 +8,7 @@ import {
   IconFileBroken,
   IconSignature,
   IconTableColumn,
+  IconBrandGithub,
 } from "@tabler/icons-react";
 import SectionHeading from "./section-heading";
 import GodotImage from "@/public/godot_doomlike.png";
@@ -27,6 +27,8 @@ import WatchColor from "@/public/watch-color-app.png";
 import WatchColorGif from "@/public/watch-color-app.gif";
 import GodotFinal from "@/public/437-final.png";
 import GodotFinalGif from "@/public/437-final.gif";
+import Auctions from "@/public/auctions.png";
+import AuctionsGif from "@/public/auctions.gif";
 
 interface Item {
   title: string;
@@ -37,21 +39,12 @@ interface Item {
   icon: React.ReactNode;
   imageComponent: React.ReactNode;
   gifComponent: React.ReactNode;
+  githubLink: string;
 }
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects");
-  const [openModal, setOpenModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
-
-  const openModalWithItem = (item: Item) => {
-    setSelectedItem(item);
-    setOpenModal(true);
-  };
-
-  const closeModal = () => {
-    setOpenModal(false);
-  };
 
   return (
     <section id="projects" className="scroll-mt-28">
@@ -65,31 +58,13 @@ export default function Projects() {
             title={item.title}
             description={item.description}
             header={item.header}
+            githubLink={item.githubLink}
             className={item.className}
             icon={item.icon}
-            onClick={() => openModalWithItem(item)}
             ref={i === 0 ? ref : null}
           />
         ))}
       </BentoGrid>
-      <Modal
-        dismissible
-        show={openModal}
-        onClose={closeModal}
-        className="bg-slate-700"
-      >
-        <Modal.Header className="dark:bg-[#111827]">
-          {selectedItem && selectedItem.title}
-        </Modal.Header>
-        <Modal.Body className="dark:bg-[#111827]">
-          {selectedItem && selectedItem.detailedDescription}
-        </Modal.Body>
-        <Modal.Footer className="flex justify-center dark:bg-[#111827]">
-          <Button outline gradientDuoTone="purpleToBlue" onClick={closeModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </section>
   );
 }
@@ -128,7 +103,9 @@ const items: Item[] = [
   // Lentil JSX
   {
     title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
+    description:
+      "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
+
     detailedDescription:
       "This is a detailed description for The Dawn of Innovation",
     header: <Skeleton imageSrc={LentilJSX.src} gifSrc={LentilJSXGif.src} />,
@@ -136,12 +113,13 @@ const items: Item[] = [
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={LentilJSX.src} alt="Lentil JSX Image" />,
     gifComponent: <img src={LentilJSXGif.src} alt="Lentil JSX Gif" />,
+    githubLink: "https://github.com/oucar/lentil-jsx",
   },
   // Godot Doom like shooter
   {
     title: "The Digital Revolution",
     description:
-      "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
+      "Lentil etur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ",
     detailedDescription:
       "This is a detailed description for The Digital Revolution",
     header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
@@ -149,17 +127,19 @@ const items: Item[] = [
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
     gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
+    githubLink: "https://github.com/oucar/doomlike-retro-fps",
   },
   // Microservices
   {
     title: "MICROSERVICES",
     description: "Discover the beauty of thoughtful and functional design.",
     detailedDescription: "This is a detailed description for The Art of Design",
-    header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
+    header: <Skeleton imageSrc={Auctions.src} gifSrc={AuctionsGif.src} />,
     className: "md:col-span-2",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-    imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
-    gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
+    imageComponent: <img src={Auctions.src} alt="Godot Image" />,
+    gifComponent: <img src={AuctionsGif.src} alt="Godot Gif" />,
+    githubLink: "https://github.com/oucar/car-auction-microservices",
   },
   // Sorting Visualizer
   {
@@ -173,6 +153,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Sorting.src} alt="Sorting Visualizer Image" />,
     gifComponent: <img src={SortingGif.src} alt="Sorting Visualizer Gif" />,
+    githubLink: "https://github.com/oucar/sorting-visualizer",
   },
   // Color App
   {
@@ -188,6 +169,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={ReactColorApp.src} alt="React Color App Image" />,
     gifComponent: <img src={ReactColorAppGif.src} alt="React Color App Gif" />,
+    githubLink: "https://github.com/oucar/react-color-palette",
   },
   // WatchOS Color App
   {
@@ -201,6 +183,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={WatchColor.src} alt="Watch Color App Image" />,
     gifComponent: <img src={WatchColorGif.src} alt="Watch Color App Gif" />,
+    githubLink: "https://github.com/oucar/watchOs-colorApp",
   },
   // React activities
   {
@@ -216,6 +199,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Reactivities.src} alt="React Activities Image" />,
     gifComponent: <img src={ReactColorAppGif.src} alt="React Activities Gif" />,
+    githubLink: "https://github.com/oucar/React-Activities",
   },
   // WatchOS Notes
   {
@@ -229,6 +213,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={WatchNotes.src} alt="Watch Notes Image" />,
     gifComponent: <img src={WatchNotesGif.src} alt="Watch Notes Gif" />,
+    githubLink: "https://github.com/oucar/watchos-ios-notes",
   },
   // 437 Final
   {
@@ -242,19 +227,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
     gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
-  },
-  // School DB
-  {
-    title: "School DB",
-    description:
-      "Understand the impact of effective communication in our lives.",
-    detailedDescription:
-      "This is a detailed description for The Power of Communication",
-    header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
-    className: "md:col-span-1",
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
-    gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
+    githubLink: "https://github.com/oucar/437-final",
   },
   // Another APP - alg related
 ];
