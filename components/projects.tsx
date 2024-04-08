@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Button, Modal } from "flowbite-react";
 import { useSectionInView } from "@/lib/hooks";
 import { BentoGrid, BentoGridItem } from "./bento-grid";
 import {
@@ -9,6 +8,7 @@ import {
   IconFileBroken,
   IconSignature,
   IconTableColumn,
+  IconBrandGithub
 } from "@tabler/icons-react";
 import SectionHeading from "./section-heading";
 import GodotImage from "@/public/godot_doomlike.png";
@@ -126,7 +126,7 @@ const items: Item[] = [
   {
     title: "The Digital Revolution",
     description:
-      "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
+      "Lentil etur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ",
     detailedDescription:
       "This is a detailed description for The Digital Revolution",
     header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
