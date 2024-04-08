@@ -74,24 +74,6 @@ export default function Projects() {
           />
         ))}
       </BentoGrid>
-      <Modal
-        dismissible
-        show={openModal}
-        onClose={closeModal}
-        className="bg-slate-700"
-      >
-        <Modal.Header className="dark:bg-[#111827]">
-          {selectedItem && selectedItem.title}
-        </Modal.Header>
-        <Modal.Body className="dark:bg-[#111827]">
-          {selectedItem && selectedItem.detailedDescription}
-        </Modal.Body>
-        <Modal.Footer className="flex justify-center dark:bg-[#111827]">
-          <Button outline gradientDuoTone="purpleToBlue" onClick={closeModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </section>
   );
 }
@@ -130,7 +112,8 @@ const items: Item[] = [
   // Lentil JSX
   {
     title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
+    description:       "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
+
     detailedDescription:
       "This is a detailed description for The Dawn of Innovation",
     header: <Skeleton imageSrc={LentilJSX.src} gifSrc={LentilJSXGif.src} />,
@@ -143,7 +126,7 @@ const items: Item[] = [
   {
     title: "The Digital Revolution",
     description:
-      "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
+      "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
     detailedDescription:
       "This is a detailed description for The Digital Revolution",
     header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
