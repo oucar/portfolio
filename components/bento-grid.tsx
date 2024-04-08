@@ -31,6 +31,7 @@ export const BentoGridItem = React.forwardRef(
       header,
       icon,
       onClick,
+      githubLink,
     }: {
       className?: string;
       title?: string | React.ReactNode;
@@ -38,6 +39,7 @@ export const BentoGridItem = React.forwardRef(
       header?: React.ReactNode;
       icon?: React.ReactNode;
       onClick?: () => void;
+      githubLink: string;
     },
     ref: React.Ref<HTMLDivElement>
   ) => {
@@ -74,9 +76,16 @@ export const BentoGridItem = React.forwardRef(
             <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
               {title}
             </div>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: isHovered ? 1 : 0 }} transition={{ duration: 0.2 }}>
+            <motion.a
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isHovered ? 1 : 0 }}
+              transition={{ duration: 0.2 }}
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconBrandGithub />
-            </motion.div>
+            </motion.a>
           </div>
           <div className="font-sans font-normal text-neutral-600 text-xs h-18 dark:text-neutral-300">
             {description}

@@ -8,7 +8,7 @@ import {
   IconFileBroken,
   IconSignature,
   IconTableColumn,
-  IconBrandGithub
+  IconBrandGithub,
 } from "@tabler/icons-react";
 import SectionHeading from "./section-heading";
 import GodotImage from "@/public/godot_doomlike.png";
@@ -39,21 +39,12 @@ interface Item {
   icon: React.ReactNode;
   imageComponent: React.ReactNode;
   gifComponent: React.ReactNode;
+  githubLink: string;
 }
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects");
-  const [openModal, setOpenModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
-
-  const openModalWithItem = (item: Item) => {
-    setSelectedItem(item);
-    setOpenModal(true);
-  };
-
-  const closeModal = () => {
-    setOpenModal(false);
-  };
 
   return (
     <section id="projects" className="scroll-mt-28">
@@ -67,9 +58,9 @@ export default function Projects() {
             title={item.title}
             description={item.description}
             header={item.header}
+            githubLink={item.githubLink}
             className={item.className}
             icon={item.icon}
-            onClick={() => openModalWithItem(item)}
             ref={i === 0 ? ref : null}
           />
         ))}
@@ -112,7 +103,8 @@ const items: Item[] = [
   // Lentil JSX
   {
     title: "The Dawn of Innovation",
-    description:       "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
+    description:
+      "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
 
     detailedDescription:
       "This is a detailed description for The Dawn of Innovation",
@@ -121,6 +113,7 @@ const items: Item[] = [
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={LentilJSX.src} alt="Lentil JSX Image" />,
     gifComponent: <img src={LentilJSXGif.src} alt="Lentil JSX Gif" />,
+    githubLink: "https://github.com/oucar/lentil-jsx",
   },
   // Godot Doom like shooter
   {
@@ -134,6 +127,7 @@ const items: Item[] = [
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
     gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
+    githubLink: "",
   },
   // Microservices
   {
@@ -145,6 +139,7 @@ const items: Item[] = [
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Auctions.src} alt="Godot Image" />,
     gifComponent: <img src={AuctionsGif.src} alt="Godot Gif" />,
+    githubLink: "",
   },
   // Sorting Visualizer
   {
@@ -158,6 +153,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Sorting.src} alt="Sorting Visualizer Image" />,
     gifComponent: <img src={SortingGif.src} alt="Sorting Visualizer Gif" />,
+    githubLink: "",
   },
   // Color App
   {
@@ -173,6 +169,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={ReactColorApp.src} alt="React Color App Image" />,
     gifComponent: <img src={ReactColorAppGif.src} alt="React Color App Gif" />,
+    githubLink: "",
   },
   // WatchOS Color App
   {
@@ -186,6 +183,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={WatchColor.src} alt="Watch Color App Image" />,
     gifComponent: <img src={WatchColorGif.src} alt="Watch Color App Gif" />,
+    githubLink: "",
   },
   // React activities
   {
@@ -201,6 +199,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Reactivities.src} alt="React Activities Image" />,
     gifComponent: <img src={ReactColorAppGif.src} alt="React Activities Gif" />,
+    githubLink: "",
   },
   // WatchOS Notes
   {
@@ -214,6 +213,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={WatchNotes.src} alt="Watch Notes Image" />,
     gifComponent: <img src={WatchNotesGif.src} alt="Watch Notes Gif" />,
+    githubLink: "",
   },
   // 437 Final
   {
@@ -227,6 +227,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
     gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
+    githubLink: "",
   },
   // Another APP - alg related
 ];
