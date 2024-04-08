@@ -127,7 +127,7 @@ const items: Item[] = [
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
     gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
-    githubLink: "",
+    githubLink: "https://github.com/oucar/doomlike-retro-fps",
   },
   // Microservices
   {
@@ -139,7 +139,7 @@ const items: Item[] = [
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Auctions.src} alt="Godot Image" />,
     gifComponent: <img src={AuctionsGif.src} alt="Godot Gif" />,
-    githubLink: "",
+    githubLink: "https://github.com/oucar/car-auction-microservices",
   },
   // Sorting Visualizer
   {
@@ -153,7 +153,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Sorting.src} alt="Sorting Visualizer Image" />,
     gifComponent: <img src={SortingGif.src} alt="Sorting Visualizer Gif" />,
-    githubLink: "",
+    githubLink: "https://github.com/oucar/sorting-visualizer",
   },
   // Color App
   {
@@ -169,7 +169,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={ReactColorApp.src} alt="React Color App Image" />,
     gifComponent: <img src={ReactColorAppGif.src} alt="React Color App Gif" />,
-    githubLink: "",
+    githubLink: "https://github.com/oucar/react-color-palette",
   },
   // WatchOS Color App
   {
@@ -183,7 +183,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={WatchColor.src} alt="Watch Color App Image" />,
     gifComponent: <img src={WatchColorGif.src} alt="Watch Color App Gif" />,
-    githubLink: "",
+    githubLink: "https://github.com/oucar/watchOs-colorApp",
   },
   // React activities
   {
@@ -199,7 +199,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Reactivities.src} alt="React Activities Image" />,
     gifComponent: <img src={ReactColorAppGif.src} alt="React Activities Gif" />,
-    githubLink: "",
+    githubLink: "https://github.com/oucar/React-Activities",
   },
   // WatchOS Notes
   {
@@ -213,7 +213,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={WatchNotes.src} alt="Watch Notes Image" />,
     gifComponent: <img src={WatchNotesGif.src} alt="Watch Notes Gif" />,
-    githubLink: "",
+    githubLink: "https://github.com/oucar/watchos-ios-notes",
   },
   // 437 Final
   {
@@ -227,7 +227,7 @@ const items: Item[] = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
     gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
-    githubLink: "",
+    githubLink: "https://github.com/oucar/437-final",
   },
   // Another APP - alg related
 ];
