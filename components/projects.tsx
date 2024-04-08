@@ -27,6 +27,8 @@ import WatchColor from "@/public/watch-color-app.png";
 import WatchColorGif from "@/public/watch-color-app.gif";
 import GodotFinal from "@/public/437-final.png";
 import GodotFinalGif from "@/public/437-final.gif";
+import Auctions from "@/public/auctions.png";
+import AuctionsGif from "@/public/auctions.gif";
 
 interface Item {
   title: string;
@@ -155,11 +157,11 @@ const items: Item[] = [
     title: "MICROSERVICES",
     description: "Discover the beauty of thoughtful and functional design.",
     detailedDescription: "This is a detailed description for The Art of Design",
-    header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
+    header: <Skeleton imageSrc={Auctions.src} gifSrc={AuctionsGif.src} />,
     className: "md:col-span-2",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-    imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
-    gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
+    imageComponent: <img src={Auctions.src} alt="Godot Image" />,
+    gifComponent: <img src={AuctionsGif.src} alt="Godot Gif" />,
   },
   // Sorting Visualizer
   {
@@ -238,19 +240,6 @@ const items: Item[] = [
     detailedDescription:
       "This is a detailed description for The Power of Communication",
     header: <Skeleton imageSrc={GodotFinal.src} gifSrc={GodotFinalGif.src} />,
-    className: "md:col-span-1",
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
-    gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
-  },
-  // School DB
-  {
-    title: "School DB",
-    description:
-      "Understand the impact of effective communication in our lives.",
-    detailedDescription:
-      "This is a detailed description for The Power of Communication",
-    header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
