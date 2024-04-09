@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import OnurPortrait from "../public/onur.png";
 import { FaGithub, FaLinkedinIn, FaStackOverflow } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -23,6 +24,10 @@ export default function Intro() {
       icon: <FaStackOverflow />,
       url: "https://stackoverflow.com/users/12389133/onur",
     },
+    {
+      icon: <SiLeetcode />,
+      url: "https://leetcode.com/oucar/"
+    }
   ];
 
   const handleIconClick = (url: any) => {
