@@ -3,7 +3,6 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { FaGithub, FaLinkedinIn, FaStackOverflow } from "react-icons/fa";
 
 export default function About() {
   const { ref } = useSectionInView("About");
@@ -50,7 +49,7 @@ export default function About() {
         <span className="font-medium">
           playing analog synthesizers and drums!
         </span>
-        . Spending quality time with my cat is also one of my favorite
+        Spending quality time with my cat is also one of my favorite
         comforting activities.
       </p>
     </motion.section>

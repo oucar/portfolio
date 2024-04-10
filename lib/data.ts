@@ -91,23 +91,36 @@ export const experiencesData = [
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
+  // Programming Languages
+  "C/C++",
+  "C# (.NET)",
   "JavaScript",
   "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
   "Python",
-  "Django",
+  "Java",
+  
+  // Frameworks and Libraries
+  "NHibernate",
+  "Entity Framework",
+  "LINQ",
+  "React.js",
+  "Next.js",
+  "Vue.js",
+  "Node.js",
+  "Redux",
+  "Vuex",
+  "Tailwind CSS",
   "Framer Motion",
+  
+  // Databases
+  "SQL",
+  "MongoDB",
+  "PostgreSQL",
+  
+  // Development Tools and Practices
+  "Git",
+  "Azure DevOps",
+  "Agile",
+  "Waterfall",
+  "vim",
 ] as const;
