@@ -23,7 +23,7 @@ export const BentoGrid = ({
 };
 
 export const BentoGridItem = React.forwardRef(
-  (
+  function BentoGridItem(
     {
       className,
       title,
@@ -42,7 +42,7 @@ export const BentoGridItem = React.forwardRef(
       githubLink: string;
     },
     ref: React.Ref<HTMLDivElement>
-  ) => {
+  ) {
     const [isHovered, setIsHovered] = React.useState(false);
 
     const handleMouseEnter = () => {
@@ -95,3 +95,5 @@ export const BentoGridItem = React.forwardRef(
     );
   }
 );
+
+BentoGridItem.displayName = 'BentoGridItem';
