@@ -103,7 +103,7 @@ const SortingGif = {
   src: 'https://pouch.jumpshare.com/preview/M1H6a-xBNJdGMQcICglxIyJcAZSE8vuH8kwsecI1T2IljifrrSK2o2eIEtjoIctcLVR6iyrVEBeskBJeo0cgXTSeuZLSYnA3uFngg62Lelk',
 };
 const ReactColorAppGif = {
-  src: 'https://your-cloud-storage-url.com/react-color-app.gif',
+  src: 'https://pouch.jumpshare.com/preview/Cj48R0KZE4hkWBAS_-eXb5EKcT1YSjpPl7lOa-XAOlT8HZvnKnUyzE1qg9aPJ_-Hy1dv3f136fFd_laks3gOXn8h-_uO1dHbGzmL3WUuPx4',
 };
 const WatchColorGif = {
   src: 'https://pouch.jumpshare.com/preview/LfcGn-3tsNzICv8fobtkGEnqD4Vs3cjj0t1gYflATa2Z8fMsecXGQC6j8tE7VWKWLVR6iyrVEBeskBJeo0cgXTSeuZLSYnA3uFngg62Lelk',
@@ -154,7 +154,7 @@ const items: Item[] = [
     className: "md:col-span-2",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Auctions.src} alt="Auctions Image" />,
-    gifComponent: <img src="https://pouch.jumpshare.com/preview/KtG1a77nvWWrhh1f4GpiLNSbhkffSCsh0NjpnjLrUD_l_8AMsHC4Am_mgAUO3S51LVR6iyrVEBeskBJeo0cgXT7Izfx6i_hhbBCeXAYElus" alt="Auctions Gif" />,
+    gifComponent: <img src={AuctionsGif.src} alt="Auctions Gif" />,
     githubLink: "https://github.com/oucar/car-auction-microservices",
   },
   // Sorting Visualizer
