@@ -12,23 +12,14 @@ import {
 } from "@tabler/icons-react";
 import SectionHeading from "./section-heading";
 import GodotImage from "@/public/godot_doomlike.png";
-import GodotGif from "@/public/godot_doom.gif";
 import LentilJSX from "@/public/lentil-jsx.png";
-import LentilJSXGif from "@/public/lentil-jsx.gif";
 import Sorting from "@/public/sorting.png";
-import SortingGif from "@/public/sorting.gif";
 import ReactColorApp from "@/public/color-app.png";
-import ReactColorAppGif from "@/public/color-app.gif";
 import Reactivities from "@/public/reactivities.png";
-import ReactivitiesGif from "@/public/reactivities.gif";
 import WatchNotes from "@/public/watch-notes.png";
-import WatchNotesGif from "@/public/watch-notes.gif";
 import WatchColor from "@/public/watch-color-app.png";
-import WatchColorGif from "@/public/watch-color-app.gif";
 import GodotFinal from "@/public/437-final.png";
-import GodotFinalGif from "@/public/437-final.gif";
 import Auctions from "@/public/auctions.png";
-import AuctionsGif from "@/public/auctions.gif";
 
 interface Item {
   title: string;
@@ -45,24 +36,6 @@ export default function Projects() {
   const { ref } = useSectionInView("Projects");
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
-  // Preload GIFs on component mount
-  useEffect(() => {
-    const preloadImages = [
-      GodotGif,
-      LentilJSXGif,
-      SortingGif,
-      ReactColorAppGif,
-      ReactivitiesGif,
-      WatchNotesGif,
-      WatchColorGif,
-      GodotFinalGif,
-      AuctionsGif
-    ];
-    preloadImages.forEach((image) => {
-      const img = new Image();
-      img.src = image.src;
-    });
-  }, []);
 
   return (
     <section id="projects" className="scroll-mt-28">
@@ -95,6 +68,7 @@ const Skeleton = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+
   return (
     <div
       className="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"
@@ -115,6 +89,35 @@ const Skeleton = ({
     </div>
   );
 };
+
+const LentilJSXGif = {
+  src: 'https://pouch.jumpshare.com/preview/fxRCSJztar8FbRdiWbTpC9O8EP7iGh6gGnQsZL-ml3D_Rpcwg2p7X77SBV4KK8lALVR6iyrVEBeskBJeo0cgXb_ayp7U-uas7xNQrQmB14c',
+};
+const GodotGif = {
+  src: 'https://pouch.jumpshare.com/preview/RAgT_IXdep6d1GfQ-awiEsk3g9uwM2PjoH_pdHLFMszS6F2cdF7BQXePR-_8cidgLVR6iyrVEBeskBJeo0cgXb_ayp7U-uas7xNQrQmB14c',
+};
+const AuctionsGif = {
+  src: 'https://pouch.jumpshare.com/preview/KtG1a77nvWWrhh1f4GpiLNSbhkffSCsh0NjpnjLrUD_l_8AMsHC4Am_mgAUO3S51LVR6iyrVEBeskBJeo0cgXb_ayp7U-uas7xNQrQmB14c',
+};
+const SortingGif = {
+  src: 'https://pouch.jumpshare.com/preview/M1H6a-xBNJdGMQcICglxIyJcAZSE8vuH8kwsecI1T2IljifrrSK2o2eIEtjoIctcLVR6iyrVEBeskBJeo0cgXTSeuZLSYnA3uFngg62Lelk',
+};
+const ReactColorAppGif = {
+  src: 'https://your-cloud-storage-url.com/react-color-app.gif',
+};
+const WatchColorGif = {
+  src: 'https://pouch.jumpshare.com/preview/LfcGn-3tsNzICv8fobtkGEnqD4Vs3cjj0t1gYflATa2Z8fMsecXGQC6j8tE7VWKWLVR6iyrVEBeskBJeo0cgXTSeuZLSYnA3uFngg62Lelk',
+};
+const ReactivitiesGif = {
+  src: 'https://pouch.jumpshare.com/preview/TIjkYSKWujpxsujIt9OrLM8LQJp1u960UFNhakaPn3bpQ_PZCiqgv3F_aQWOemWkLVR6iyrVEBeskBJeo0cgXb5CiBKxN05Ky4EoZ3pq1cw',
+};
+const WatchNotesGif = {
+  src: 'https://pouch.jumpshare.com/preview/CWDzBEfnzOSbwnlDJk85B0pipGA3Ak9ftGzX6EGP7W45jz2lNcE9ufixyYUUThVILVR6iyrVEBeskBJeo0cgXTSeuZLSYnA3uFngg62Lelk',
+};
+const GodotFinalGif = {
+  src: 'https://pouch.jumpshare.com/preview/wkAssA5bkY8TB_qKztH6PgKzfAK1LRHZdYFUQBehzgEzUoT9_Zd5fZgjw3sYw7_0LVR6iyrVEBeskBJeo0cgXb_ayp7U-uas7xNQrQmB14c',
+};
+
 
 const items: Item[] = [
   // 1555 * 451
@@ -151,7 +154,7 @@ const items: Item[] = [
     className: "md:col-span-2",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Auctions.src} alt="Auctions Image" />,
-    gifComponent: <img src={AuctionsGif.src} alt="Auctions Gif" />,
+    gifComponent: <img src="https://pouch.jumpshare.com/preview/KtG1a77nvWWrhh1f4GpiLNSbhkffSCsh0NjpnjLrUD_l_8AMsHC4Am_mgAUO3S51LVR6iyrVEBeskBJeo0cgXT7Izfx6i_hhbBCeXAYElus" alt="Auctions Gif" />,
     githubLink: "https://github.com/oucar/car-auction-microservices",
   },
   // Sorting Visualizer
