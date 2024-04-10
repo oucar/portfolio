@@ -48,8 +48,9 @@ const SortingVideo = {
 const ReactColorAppVideo = {
   src: "https://www.youtube.com/embed/iQRVPCEOS7M?si=_d-C9G3ZSrpZo0nc",
 };
+// Upload and use heavily_cropped for better aspect ratio from /Demos.
 const WatchColorVideo = {
-  src: "https://www.youtube.com/embed/iD7eL7gzyTo?si=SIkcX34xKToh48ns",
+  src: "https://www.youtube.com/embed/D2N-cCIh7_k?si=6ViGsmVwkAwohH9q",
 };
 const ReactivitiesVideo = {
   src: "https://www.youtube.com/embed/M6PCOuUxsyE?si=AIHNhFsC5R9enapC",
