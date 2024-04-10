@@ -49,7 +49,7 @@ export default function About() {
         <span className="font-medium">
           playing analog synthesizers and drums!
         </span>
-        . Spending quality time with my cat is also one of my favorite
+        Spending quality time with my cat is also one of my favorite
         comforting activities.
       </p>
     </motion.section>
