@@ -19,7 +19,7 @@ import WatchNotes from "@/public/watch-notes.png";
 import WatchColor from "@/public/watch-color-app.png";
 import GodotFinal from "@/public/437-final.png";
 import Auctions from "@/public/auctions.png";
-import { IconLoader } from "@tabler/icons-react";
+import ReactPlayer from "react-player";
 
 interface Item {
   title: string;
@@ -28,9 +28,39 @@ interface Item {
   className: string;
   icon: React.ReactNode;
   imageComponent: React.ReactNode;
-  gifComponent: React.ReactNode;
   githubLink: string;
 }
+
+
+// Make sure to click on Share > Embed > Copy the src link
+const LentilJSXVideo = {
+  src: "https://www.youtube.com/embed/oH4mkUU3CLc?si=6fDQnMbX_3nkPtSc",
+};
+const GodotVideo = {
+  src: "https://www.youtube.com/embed/tMgyek7DvMA?si=729cGA8hs4yvUjop",
+};
+const AuctionsVideo = {
+  src: "https://www.youtube.com/embed/KDHDXTOa9lY?si=RPbSPSgYI8E9OpLf",
+};
+const SortingVideo = {
+  src: "https://www.youtube.com/embed/wyq-ew57DTc?si=xX9NAKdGmDQ3ZQVb",
+};
+const ReactColorAppVideo = {
+  src: "https://www.youtube.com/embed/iQRVPCEOS7M?si=_d-C9G3ZSrpZo0nc",
+};
+const WatchColorVideo = {
+  src: "https://www.youtube.com/embed/iD7eL7gzyTo?si=SIkcX34xKToh48ns",
+};
+const ReactivitiesVideo = {
+  src: "https://www.youtube.com/embed/M6PCOuUxsyE?si=AIHNhFsC5R9enapC",
+};
+const WatchNotesVideo = {
+  src: "https://www.youtube.com/embed/BzXHZdT7TLM?si=Tq5wHZBbUWHtc_47",
+};
+const GodotFinalVideo = {
+  src: "https://www.youtube.com/embed/zxzgsrURiW8?si=5Z2Ann-Gns_RdWeC",
+};
+
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects");
@@ -62,15 +92,14 @@ export default function Projects() {
   );
 }
 
-const Skeleton = ({
+const VideoSkeleton = ({
   imageSrc,
-  gifSrc,
+  youtubeVideo,
 }: {
   imageSrc: string;
-  gifSrc: string;
+  youtubeVideo: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [gifLoaded, setGifLoaded] = useState(false);
 
   return (
     <div
@@ -78,59 +107,40 @@ const Skeleton = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Display image by default */}
       <img
         src={imageSrc}
         alt="Project Image"
         className="object-cover w-full h-full rounded-xl transition-opacity duration-300 ease-in-out"
         style={{ opacity: isHovered ? 0 : 1 }}
       />
-      
-      {/* Display loading spinner only while GIF is loading */}
-      {isHovered && !gifLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <IconLoader className="animate-spin h-8 w-8 text-gray-500" />
+
+      {isHovered && (
+        <div
+          id="video"
+          className="absolute inset-0 w-full h-full rounded-xl overflow-hidden flex justify-center items-center"
+        >
+          <ReactPlayer
+            url={youtubeVideo}
+            playing={isHovered}
+            controls={false}
+            loop={true}
+            muted={true}
+            width="100%"
+            height="220%"
+            config={{
+              youtube: {
+                playerVars: {
+                  controls: 0,
+                  modestbranding: 1,
+                },
+              },
+            }}
+            style={{ visibility: isHovered ? "visible" : "hidden" }}
+          />
         </div>
       )}
-
-      {/* Display GIF if loaded */}
-      <img
-        src={gifSrc}
-        alt="GIF"
-        className="absolute inset-0 object-cover w-full h-full rounded-xl transition-opacity duration-0 ease-in-out"
-        style={{ opacity: (isHovered && gifLoaded) ? 1 : 0 }}
-        onLoad={() => setGifLoaded(true)}
-      />
     </div>
   );
-};
-
-const LentilJSXGif = {
-  src: "https://pouch.jumpshare.com/preview/fxRCSJztar8FbRdiWbTpC9O8EP7iGh6gGnQsZL-ml3D_Rpcwg2p7X77SBV4KK8lALVR6iyrVEBeskBJeo0cgXb_ayp7U-uas7xNQrQmB14c",
-};
-const GodotGif = {
-  src: "https://pouch.jumpshare.com/preview/RAgT_IXdep6d1GfQ-awiEsk3g9uwM2PjoH_pdHLFMszS6F2cdF7BQXePR-_8cidgLVR6iyrVEBeskBJeo0cgXb_ayp7U-uas7xNQrQmB14c",
-};
-const AuctionsGif = {
-  src: "https://pouch.jumpshare.com/preview/KtG1a77nvWWrhh1f4GpiLNSbhkffSCsh0NjpnjLrUD_l_8AMsHC4Am_mgAUO3S51LVR6iyrVEBeskBJeo0cgXb_ayp7U-uas7xNQrQmB14c",
-};
-const SortingGif = {
-  src: "https://pouch.jumpshare.com/preview/M1H6a-xBNJdGMQcICglxIyJcAZSE8vuH8kwsecI1T2IljifrrSK2o2eIEtjoIctcLVR6iyrVEBeskBJeo0cgXTSeuZLSYnA3uFngg62Lelk",
-};
-const ReactColorAppGif = {
-  src: "https://pouch.jumpshare.com/preview/Cj48R0KZE4hkWBAS_-eXb5EKcT1YSjpPl7lOa-XAOlT8HZvnKnUyzE1qg9aPJ_-Hy1dv3f136fFd_laks3gOXn8h-_uO1dHbGzmL3WUuPx4",
-};
-const WatchColorGif = {
-  src: "https://pouch.jumpshare.com/preview/LfcGn-3tsNzICv8fobtkGEnqD4Vs3cjj0t1gYflATa2Z8fMsecXGQC6j8tE7VWKWLVR6iyrVEBeskBJeo0cgXTSeuZLSYnA3uFngg62Lelk",
-};
-const ReactivitiesGif = {
-  src: "https://pouch.jumpshare.com/preview/TIjkYSKWujpxsujIt9OrLM8LQJp1u960UFNhakaPn3bpQ_PZCiqgv3F_aQWOemWkLVR6iyrVEBeskBJeo0cgXb5CiBKxN05Ky4EoZ3pq1cw",
-};
-const WatchNotesGif = {
-  src: "https://pouch.jumpshare.com/preview/CWDzBEfnzOSbwnlDJk85B0pipGA3Ak9ftGzX6EGP7W45jz2lNcE9ufixyYUUThVILVR6iyrVEBeskBJeo0cgXTSeuZLSYnA3uFngg62Lelk",
-};
-const GodotFinalGif = {
-  src: "https://pouch.jumpshare.com/preview/wkAssA5bkY8TB_qKztH6PgKzfAK1LRHZdYFUQBehzgEzUoT9_Zd5fZgjw3sYw7_0LVR6iyrVEBeskBJeo0cgXb_ayp7U-uas7xNQrQmB14c",
 };
 
 const items: Item[] = [
@@ -140,11 +150,15 @@ const items: Item[] = [
     title: "Lentil-JSX",
     description:
       "Embark on seamless React journeys with Lentil-JSX. Driven by ESBuild, it ensures efficient transpiling and bundling. Supporting both TypeScript and JavaScript, it enhances productivity with caching, concurrent usage, and npm integration, all contributing to a dependable development experience.",
-    header: <Skeleton imageSrc={LentilJSX.src} gifSrc={LentilJSXGif.src} />,
+    header: (
+      <VideoSkeleton
+        imageSrc={LentilJSX.src}
+        youtubeVideo={LentilJSXVideo.src}
+      />
+    ),
     className: "md:col-span-3",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={LentilJSX.src} alt="Lentil JSX Image" />,
-    gifComponent: <img src={LentilJSXGif.src} alt="Lentil JSX Gif" />,
     githubLink: "https://github.com/oucar/lentil-jsx",
   },
   // Godot Doom like shooter
@@ -152,11 +166,15 @@ const items: Item[] = [
     title: "Doom-like Retro FPS",
     description:
       "Experience a throwback to the old days with a fast-paced, Doom-like shooter, delivering pixelated 3D action powered by Godot.",
-    header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
+    header: (
+      <VideoSkeleton
+        imageSrc={GodotImage.src}
+        youtubeVideo={GodotVideo.src}
+      />
+    ),
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
-    gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
     githubLink: "https://github.com/oucar/doomlike-retro-fps",
   },
   // Microservices
@@ -164,11 +182,15 @@ const items: Item[] = [
     title: "SVC Auctions",
     description:
       "A microservices-based application that leverages RabbitMQ and MassTransit for seamless communication. Powered by Next.js and .NET, it delivers real-time bidding and event-driven architecture for dynamic and immersive auction experiences.",
-    header: <Skeleton imageSrc={Auctions.src} gifSrc={AuctionsGif.src} />,
+    header: (
+      <VideoSkeleton
+        imageSrc={Auctions.src}
+        youtubeVideo={AuctionsVideo.src}
+      />
+    ),
     className: "md:col-span-2",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Auctions.src} alt="Auctions Image" />,
-    gifComponent: <img src={AuctionsGif.src} alt="Auctions Gif" />,
     githubLink: "https://github.com/oucar/car-auction-microservices",
   },
   // Sorting Visualizer
@@ -176,11 +198,15 @@ const items: Item[] = [
     title: "Sorting Algorithm Visualizer",
     description:
       "Embark on a captivating journey through sorting algorithms with this immersive React-based visualizer. Experience the magic of various sorting techniques as you interactively explore their mechanics and efficiency.",
-    header: <Skeleton imageSrc={Sorting.src} gifSrc={SortingGif.src} />,
+    header: (
+      <VideoSkeleton
+        imageSrc={Sorting.src}
+        youtubeVideo={SortingVideo.src}
+      />
+    ),
     className: "md:col-span-3",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Sorting.src} alt="Sorting Visualizer Image" />,
-    gifComponent: <img src={SortingGif.src} alt="Sorting Visualizer Gif" />,
     githubLink: "https://github.com/oucar/sorting-visualizer",
   },
   // Color App
@@ -189,12 +215,14 @@ const items: Item[] = [
     description:
       "Effortlessly explore, create, and integrate color palettes using interactive tools and robust validation mechanics.",
     header: (
-      <Skeleton imageSrc={ReactColorApp.src} gifSrc={ReactColorAppGif.src} />
+      <VideoSkeleton
+        imageSrc={ReactColorApp.src}
+        youtubeVideo={ReactColorAppVideo.src}
+      />
     ),
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={ReactColorApp.src} alt="React Color App Image" />,
-    gifComponent: <img src={ReactColorAppGif.src} alt="React Color App Gif" />,
     githubLink: "https://github.com/oucar/react-color-palette",
   },
   // WatchOS Color App
@@ -202,11 +230,15 @@ const items: Item[] = [
     title: "WatchOS Color Explorer",
     description:
       "A WatchOS 10.2 app written in Swift, crafted for expanding skills and venturing into new territories of app development.",
-    header: <Skeleton imageSrc={WatchColor.src} gifSrc={WatchColorGif.src} />,
+    header: (
+      <VideoSkeleton
+        imageSrc={WatchColor.src}
+        youtubeVideo={WatchColorVideo.src}
+      />
+    ),
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={WatchColor.src} alt="Watch Color App Image" />,
-    gifComponent: <img src={WatchColorGif.src} alt="Watch Color App Gif" />,
     githubLink: "https://github.com/oucar/watchOs-colorApp",
   },
   // React activities
@@ -215,12 +247,14 @@ const items: Item[] = [
     description:
       "A modern, secure platform for hosting and participating in various activities. With real-time communication, clean architecture, and robust authentication, it offers a seamless experience for users organizing or joining events.",
     header: (
-      <Skeleton imageSrc={Reactivities.src} gifSrc={ReactivitiesGif.src} />
+      <VideoSkeleton
+        imageSrc={Reactivities.src}
+        youtubeVideo={ReactivitiesVideo.src}
+      />
     ),
     className: "md:col-span-3",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={Reactivities.src} alt="React Activities Image" />,
-    gifComponent: <img src={ReactColorAppGif.src} alt="React Activities Gif" />,
     githubLink: "https://github.com/oucar/React-Activities",
   },
   // WatchOS Notes
@@ -228,11 +262,15 @@ const items: Item[] = [
     title: "WatchOS Notes",
     description:
       "The Notes App for Apple Watch, written in Swift for WatchOS 10.2, offers effortless note-taking with storage, diverse input methods, and charming animations for an enjoyable user experience.",
-    header: <Skeleton imageSrc={WatchNotes.src} gifSrc={WatchNotesGif.src} />,
+    header: (
+      <VideoSkeleton
+        imageSrc={WatchNotes.src}
+        youtubeVideo={WatchNotesVideo.src}
+      />
+    ),
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={WatchNotes.src} alt="Watch Notes Image" />,
-    gifComponent: <img src={WatchNotesGif.src} alt="Watch Notes Gif" />,
     githubLink: "https://github.com/oucar/watchos-ios-notes",
   },
   // 437 Final
@@ -240,11 +278,15 @@ const items: Item[] = [
     title: "437 Finder",
     description:
       "Challenging levels, diverse animations, and intuitive gameplay mechanics.",
-    header: <Skeleton imageSrc={GodotFinal.src} gifSrc={GodotFinalGif.src} />,
+    header: (
+      <VideoSkeleton
+        imageSrc={GodotFinal.src}
+        youtubeVideo={GodotFinalVideo.src}
+      />
+    ),
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
-    gifComponent: <img src={GodotGif.src} alt="Godot Gif" />,
     githubLink: "https://github.com/oucar/437-final",
   },
   // Another APP - alg related
