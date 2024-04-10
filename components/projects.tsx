@@ -19,6 +19,7 @@ import WatchNotes from "@/public/watch-notes.png";
 import WatchColor from "@/public/watch-color-app.png";
 import GodotFinal from "@/public/437-final.png";
 import Auctions from "@/public/auctions.png";
+import { IconLoader } from "@tabler/icons-react";
 
 interface Item {
   title: string;
@@ -60,6 +61,7 @@ export default function Projects() {
     </section>
   );
 }
+
 const Skeleton = ({
   imageSrc,
   gifSrc,
@@ -68,6 +70,7 @@ const Skeleton = ({
   gifSrc: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [gifLoaded, setGifLoaded] = useState(false); 
 
   return (
     <div
@@ -81,14 +84,25 @@ const Skeleton = ({
         className="object-cover w-full h-full rounded-xl transition-opacity duration-300 ease-in-out"
         style={{ opacity: isHovered ? 0 : 1 }}
       />
-      <img
-        src={isHovered ? gifSrc : ""}
-        className="absolute inset-0 object-cover w-full h-full rounded-xl transition-opacity duration-0 ease-in-out"
-        style={{ opacity: isHovered ? 1 : 0 }}
-      />
+      
+      {isHovered && !gifLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <IconLoader className="animate-spin h-8 w-8 text-gray-500" />
+        </div>
+      )}
+
+      {isHovered && gifLoaded && (
+        <img
+          src={gifSrc}
+          alt="GIF"
+          className="absolute inset-0 object-cover w-full h-full rounded-xl transition-opacity duration-0 ease-in-out"
+          style={{ opacity: isHovered ? 1 : 0 }}
+        />
+      )}
     </div>
   );
 };
+
 
 const LentilJSXGif = {
   src: "https://pouch.jumpshare.com/preview/fxRCSJztar8FbRdiWbTpC9O8EP7iGh6gGnQsZL-ml3D_Rpcwg2p7X77SBV4KK8lALVR6iyrVEBeskBJeo0cgXb_ayp7U-uas7xNQrQmB14c",
