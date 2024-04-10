@@ -70,7 +70,7 @@ const Skeleton = ({
   gifSrc: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [gifLoaded, setGifLoaded] = useState(false); 
+  const [gifLoaded, setGifLoaded] = useState(false);
 
   return (
     <div
@@ -78,6 +78,7 @@ const Skeleton = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Display image by default */}
       <img
         src={imageSrc}
         alt="Project Image"
@@ -85,24 +86,24 @@ const Skeleton = ({
         style={{ opacity: isHovered ? 0 : 1 }}
       />
       
+      {/* Display loading spinner only while GIF is loading */}
       {isHovered && !gifLoaded && (
         <div className="absolute inset-0 flex items-center justify-center">
           <IconLoader className="animate-spin h-8 w-8 text-gray-500" />
         </div>
       )}
 
-      {isHovered && gifLoaded && (
-        <img
-          src={gifSrc}
-          alt="GIF"
-          className="absolute inset-0 object-cover w-full h-full rounded-xl transition-opacity duration-0 ease-in-out"
-          style={{ opacity: isHovered ? 1 : 0 }}
-        />
-      )}
+      {/* Display GIF if loaded */}
+      <img
+        src={gifSrc}
+        alt="GIF"
+        className="absolute inset-0 object-cover w-full h-full rounded-xl transition-opacity duration-0 ease-in-out"
+        style={{ opacity: (isHovered && gifLoaded) ? 1 : 0 }}
+        onLoad={() => setGifLoaded(true)}
+      />
     </div>
   );
 };
-
 
 const LentilJSXGif = {
   src: "https://pouch.jumpshare.com/preview/fxRCSJztar8FbRdiWbTpC9O8EP7iGh6gGnQsZL-ml3D_Rpcwg2p7X77SBV4KK8lALVR6iyrVEBeskBJeo0cgXb_ayp7U-uas7xNQrQmB14c",
