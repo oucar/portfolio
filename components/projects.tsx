@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { BentoGrid, BentoGridItem } from "./bento-grid";
@@ -44,6 +44,25 @@ interface Item {
 export default function Projects() {
   const { ref } = useSectionInView("Projects");
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+
+  // Preload GIFs on component mount
+  useEffect(() => {
+    const preloadImages = [
+      GodotGif,
+      LentilJSXGif,
+      SortingGif,
+      ReactColorAppGif,
+      ReactivitiesGif,
+      WatchNotesGif,
+      WatchColorGif,
+      GodotFinalGif,
+      AuctionsGif
+    ];
+    preloadImages.forEach((image) => {
+      const img = new Image();
+      img.src = image.src;
+    });
+  }, []);
 
   return (
     <section id="projects" className="scroll-mt-28">
@@ -131,8 +150,8 @@ const items: Item[] = [
     header: <Skeleton imageSrc={Auctions.src} gifSrc={AuctionsGif.src} />,
     className: "md:col-span-2",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-    imageComponent: <img src={Auctions.src} alt="Godot Image" />,
-    gifComponent: <img src={AuctionsGif.src} alt="Godot Gif" />,
+    imageComponent: <img src={Auctions.src} alt="Auctions Image" />,
+    gifComponent: <img src={AuctionsGif.src} alt="Auctions Gif" />,
     githubLink: "https://github.com/oucar/car-auction-microservices",
   },
   // Sorting Visualizer
