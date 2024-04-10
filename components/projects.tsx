@@ -33,7 +33,6 @@ import AuctionsGif from "@/public/auctions.gif";
 interface Item {
   title: string;
   description: string;
-  detailedDescription: string;
   header: React.ReactNode;
   className: string;
   icon: React.ReactNode;
@@ -102,12 +101,9 @@ const items: Item[] = [
   // 1555 * 451
   // Lentil JSX
   {
-    title: "The Dawn of Innovation",
+    title: "Lentil-JSX",
     description:
-      "Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.",
-
-    detailedDescription:
-      "This is a detailed description for The Dawn of Innovation",
+      "Embark on seamless React journeys with Lentil-JSX. Driven by ESBuild, it ensures efficient transpiling and bundling. Supporting both TypeScript and JavaScript, it enhances productivity with caching, concurrent usage, and npm integration, all contributing to a dependable development experience.",
     header: <Skeleton imageSrc={LentilJSX.src} gifSrc={LentilJSXGif.src} />,
     className: "md:col-span-3",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
@@ -117,11 +113,9 @@ const items: Item[] = [
   },
   // Godot Doom like shooter
   {
-    title: "The Digital Revolution",
+    title: "Doom-like Retro FPS",
     description:
-      "Lentil etur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ipsum dolor sit amet consectetur adipiscing elit. and this is a long sentence to test the overflow of the text.Lentil JSX is a super tool - has a few bugs at the moment but will be fixed later lol. lorem ",
-    detailedDescription:
-      "This is a detailed description for The Digital Revolution",
+      "Experience a throwback to the old days with a fast-paced, Doom-like shooter, delivering pixelated 3D action powered by Godot.",
     header: <Skeleton imageSrc={GodotImage.src} gifSrc={GodotGif.src} />,
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
@@ -131,9 +125,9 @@ const items: Item[] = [
   },
   // Microservices
   {
-    title: "MICROSERVICES",
-    description: "Discover the beauty of thoughtful and functional design.",
-    detailedDescription: "This is a detailed description for The Art of Design",
+    title: "SVC Auctions",
+    description:
+      "A microservices-based application that leverages RabbitMQ and MassTransit for seamless communication. Powered by Next.js and .NET, it delivers real-time bidding and event-driven architecture for dynamic and immersive auction experiences.",
     header: <Skeleton imageSrc={Auctions.src} gifSrc={AuctionsGif.src} />,
     className: "md:col-span-2",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
@@ -143,11 +137,9 @@ const items: Item[] = [
   },
   // Sorting Visualizer
   {
-    title: "The Power of Communication",
+    title: "Sorting Algorithm Visualizer",
     description:
-      "Understand the impact of effective communication in our lives.",
-    detailedDescription:
-      "This is a detailed description for The Power of Communication",
+      "Embark on a captivating journey through sorting algorithms with this immersive React-based visualizer. Experience the magic of various sorting techniques as you interactively explore their mechanics and efficiency.",
     header: <Skeleton imageSrc={Sorting.src} gifSrc={SortingGif.src} />,
     className: "md:col-span-3",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
@@ -157,11 +149,9 @@ const items: Item[] = [
   },
   // Color App
   {
-    title: "The Power of Communication",
+    title: "React Color Palettes",
     description:
-      "Understand the impact of effective communication in our lives.",
-    detailedDescription:
-      "This is a detailed description for The Power of Communication",
+      "Effortlessly explore, create, and integrate color palettes using interactive tools and robust validation mechanics.",
     header: (
       <Skeleton imageSrc={ReactColorApp.src} gifSrc={ReactColorAppGif.src} />
     ),
@@ -173,11 +163,9 @@ const items: Item[] = [
   },
   // WatchOS Color App
   {
-    title: "WatchOS Color App",
+    title: "WatchOS Color Explorer",
     description:
-      "Understand the impact of effective communication in our lives.",
-    detailedDescription:
-      "This is a detailed description for The Power of Communication",
+      "A WatchOS 10.2 app written in Swift, crafted for expanding skills and venturing into new territories of app development.",
     header: <Skeleton imageSrc={WatchColor.src} gifSrc={WatchColorGif.src} />,
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
@@ -187,11 +175,9 @@ const items: Item[] = [
   },
   // React activities
   {
-    title: "The Power of Communication",
+    title: "React Activities - An Activity Explorer",
     description:
-      "Understand the impact of effective communication in our lives.",
-    detailedDescription:
-      "This is a detailed description for The Power of Communication",
+      "A modern, secure platform for hosting and participating in various activities. With real-time communication, clean architecture, and robust authentication, it offers a seamless experience for users organizing or joining events.",
     header: (
       <Skeleton imageSrc={Reactivities.src} gifSrc={ReactivitiesGif.src} />
     ),
@@ -203,11 +189,9 @@ const items: Item[] = [
   },
   // WatchOS Notes
   {
-    title: "The Power of Communication",
+    title: "WatchOS Notes",
     description:
-      "Understand the impact of effective communication in our lives.",
-    detailedDescription:
-      "This is a detailed description for The Power of Communication",
+      "The Notes App for Apple Watch, written in Swift for WatchOS 10.2, offers effortless note-taking with storage, diverse input methods, and charming animations for an enjoyable user experience.",
     header: <Skeleton imageSrc={WatchNotes.src} gifSrc={WatchNotesGif.src} />,
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
@@ -219,9 +203,7 @@ const items: Item[] = [
   {
     title: "437 Finder",
     description:
-      "Understand the impact of effective communication in our lives.",
-    detailedDescription:
-      "This is a detailed description for The Power of Communication",
+      "Challenging levels, diverse animations, and intuitive gameplay mechanics.",
     header: <Skeleton imageSrc={GodotFinal.src} gifSrc={GodotFinalGif.src} />,
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
