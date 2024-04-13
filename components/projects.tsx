@@ -31,7 +31,6 @@ interface Item {
   githubLink: string;
 }
 
-
 // Make sure to click on Share > Embed > Copy the src link
 const LentilJSXVideo = {
   src: "https://www.youtube.com/embed/oH4mkUU3CLc?si=6fDQnMbX_3nkPtSc",
@@ -62,7 +61,6 @@ const GodotFinalVideo = {
   src: "https://www.youtube.com/embed/zxzgsrURiW8?si=5Z2Ann-Gns_RdWeC",
 };
 
-
 export default function Projects() {
   const { ref } = useSectionInView("Projects");
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
@@ -71,8 +69,14 @@ export default function Projects() {
     <section id="projects" className="scroll-mt-28">
       <motion.section>
         <SectionHeading>Projects</SectionHeading>
-        <motion.p className="flex justify-center mt-[-24px] mb-[24px] text-s text-slate-500">
-          Feel free to hover over the projects for a closer look!
+        {/* Message for larger screens */}
+        <motion.p className="hidden sm:flex text-center justify-center mt-[-24px] mb-[24px] text-s text-slate-500">
+          Feel free to hover over the project images for a closer look!
+        </motion.p>
+
+        {/* Message for smaller screens */}
+        <motion.p className="flex sm:hidden text-center justify-center mt-[-24px] mb-[24px] text-s text-slate-500">
+          Feel free to tap on the project images for a closer look!
         </motion.p>
       </motion.section>
       <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] mb-40">
@@ -168,10 +172,7 @@ const items: Item[] = [
     description:
       "Experience a throwback to the old days with a fast-paced, Doom-like shooter, delivering pixelated 3D action powered by Godot.",
     header: (
-      <VideoSkeleton
-        imageSrc={GodotImage.src}
-        youtubeVideo={GodotVideo.src}
-      />
+      <VideoSkeleton imageSrc={GodotImage.src} youtubeVideo={GodotVideo.src} />
     ),
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
@@ -184,10 +185,7 @@ const items: Item[] = [
     description:
       "A microservices-based application that leverages RabbitMQ and MassTransit for seamless communication. Powered by Next.js and .NET, it delivers real-time bidding and event-driven architecture for dynamic and immersive auction experiences.",
     header: (
-      <VideoSkeleton
-        imageSrc={Auctions.src}
-        youtubeVideo={AuctionsVideo.src}
-      />
+      <VideoSkeleton imageSrc={Auctions.src} youtubeVideo={AuctionsVideo.src} />
     ),
     className: "md:col-span-2",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
@@ -200,10 +198,7 @@ const items: Item[] = [
     description:
       "Embark on a captivating journey through sorting algorithms with this immersive React-based visualizer. Experience the magic of various sorting techniques as you interactively explore their mechanics and efficiency.",
     header: (
-      <VideoSkeleton
-        imageSrc={Sorting.src}
-        youtubeVideo={SortingVideo.src}
-      />
+      <VideoSkeleton imageSrc={Sorting.src} youtubeVideo={SortingVideo.src} />
     ),
     className: "md:col-span-3",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,

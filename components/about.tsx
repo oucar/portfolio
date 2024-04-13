@@ -18,25 +18,27 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        After completing my education at Purdue University with a degree in{" "}
+        After graduating from Purdue University with a degree in{" "}
         <span className="font-medium">Computer Science</span> and a minor in{" "}
         <span className="font-medium">Mathematics</span>, I delved into the
-        realm of software development. My journey began with a profound interest
-        in problem-solving, leading me to master technologies such as{" "}
+        realm of professional software development. My journey into the world of
+        software development began at the age of 15, sparked by a profound
+        interest in problem-solving with the{" "}
+        <span className="font-medium">C language</span>. From those early
+        beginnings, my passion for coding only grew stronger, eventually leading
+        me to pursue a degree in Computer Science, leading me to master
+        technologies such as <span className="font-medium">C# (.NET)</span>,{" "}
         <span className="font-medium">React</span>,{" "}
-        <span className="font-medium">Next.js</span>,{" "}
-        <span className="font-medium">Node.js</span>, and{" "}
-        <span className="font-medium">MongoDB</span>, and{" "}
-        <span className="font-medium">many more!</span> Proficient in{" "}
-        <span className="font-medium">TypeScript</span> and{" "}
-        <span className="font-medium">C#</span>, I am committed to continuous
-        learning and am eager to explore emerging technologies in the software
-        industry.
+        <span className="font-medium">Vue</span>,{" "}
+        <span className="font-medium">TypeScript</span>,{" "}
+        <span className="font-medium">Next.js</span>, and many more! I am
+        committed to continuous learning and am eager to explore emerging
+        technologies in the software industry.
       </p>
 
       <p>
         Outside of coding, I embrace a diverse range of interests and
-        activities. Originating from Türkiye, I have a deep appreciation for
+        activities. Originating from Turkiye, I have a deep appreciation for
         nature and enjoy <span className="font-medium">kayaking</span> in serene
         waters. I am also passionate about{" "}
         <span className="font-medium">3D printing</span> and{" "}
@@ -45,12 +47,12 @@ export default function About() {
         knowledge, I delve into subjects such as{" "}
         <span className="font-medium">history</span> and{" "}
         <span className="font-medium">philosophy</span>, constantly seeking to
-        broaden my understanding of the world. Additionally, I find solace in{" "}
+        broaden my understanding of the world. Additionally, I enjoy{" "}
         <span className="font-medium">
-          playing analog synthesizers and drums!
+          playing analog synthesizers and drums!{" "}
         </span>
-        Spending quality time with my cat is also one of my favorite
-        comforting activities.
+        Among the various comforting activities I enjoy, spending quality time
+        with my cat also brings me a sense of peace and comfort that I cherish.
       </p>
     </motion.section>
   );
