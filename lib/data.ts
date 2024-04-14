@@ -32,11 +32,10 @@ export const experiencesData = [
     description: [
       "- Applied software design patterns and industry best practices to develop a maintainable, high-quality codebase.",
       "- Developed and maintained web and desktop applications using C#, .NET, NHibernate, and SQL.",
-      "- Leveraged Vue.js to create dynamic, responsive user interfaces, complemented with server-side views using Razor Pages.",
-      "- Led efforts in the development of monorepository projects using Rush, orchestrated the integration of custom Vue components through storybooks to streamline development processes, and harnessed TypeScript to enhance the scalability of the codebase.",
+      "- Developed dynamic user interfaces with Vue.js and led Rush-based monorepo projects, integrating custom Vue components via storybooks and enhancing scalability with TypeScript.",
       "- Created and maintained deployment pipelines using Microsoft Azure and Azure Devops.",
       "- Provided on-site customer support during end-to-end and system integration testing to ensure smooth go-live process.",
-      "- Worked on support tickets to provide customers with timely resolutions and collaborated with the application support team, release engineers, and QA team post-go-live.",
+      "- Addressed support tickets promptly to ensure timely resolutions for customers, while also collaborating closely with the application support, release engineering, and QA teams post-launch.",
     ],
     icon: "work",
     date: "1/2023 - Present",
@@ -99,7 +98,7 @@ export const skillsData = [
   "TypeScript",
   "Python",
   "Java",
-  
+
   // Frameworks and Libraries
   "NHibernate",
   "Entity Framework",
@@ -112,14 +111,15 @@ export const skillsData = [
   "Vuex",
   "Tailwind CSS",
   "Framer Motion",
-  
+
   // Databases
   "SQL",
   "MongoDB",
   "PostgreSQL",
-  
+
   // Development Tools and Practices
   "Git",
+  "TFS",
   "Azure DevOps",
   "Agile",
   "Waterfall",
