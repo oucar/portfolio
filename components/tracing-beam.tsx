@@ -24,7 +24,7 @@ export const TracingBeam = ({
       setWindowWidth(window.innerWidth);
     };
 
-    handleResize(); // Initialize window width on mount
+    handleResize(); 
 
     window.addEventListener("resize", handleResize);
 
@@ -40,7 +40,7 @@ export const TracingBeam = ({
   }, [contentRef.current]);
 
   const y1 = useSpring(
-    useTransform(scrollYProgress, [0, 0.8], [50, svgHeight + 600]),
+    useTransform(scrollYProgress, [0, 1], [50, svgHeight*1.2]),
     {
       stiffness: 500,
       damping: 90,
