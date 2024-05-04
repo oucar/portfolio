@@ -271,7 +271,7 @@ const items: Item[] = [
   },
   // 437 Final
   {
-    title: "437 Finder",
+    title: "437 Platformer",
     description:
       "Challenging levels, diverse animations, and intuitive gameplay mechanics.",
     header: (
