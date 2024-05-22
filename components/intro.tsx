@@ -5,7 +5,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import OnurPortrait from "../public/onur.png";
-import { FaBlog, FaGithub, FaLinkedinIn, FaStackOverflow } from "react-icons/fa";
+import { FaBlog, FaGithub, FaItalic, FaLinkedinIn, FaPen, FaPenAlt, FaPencilAlt, FaPenFancy, FaPenNib, FaPenSquare, FaSatelliteDish, FaStackOverflow } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { FlipWords } from "./flip-words";
 
@@ -30,7 +30,7 @@ export default function Intro() {
       url: "https://leetcode.com/oucar/",
     },
     {
-      icon: <FaBlog />,
+      icon: <FaItalic />,
       url: "https://blog.ucaronur.com/",
     }
   ];
@@ -107,7 +107,7 @@ export default function Intro() {
         }}
       >
         <div className="flex justify-center items-center px-4 mb-10">
-          <div className="text-4xl mx-auto font-normal">
+          <div className="mx-auto text-2xl font-medium !leading-[1.5] sm:text-4xl">
             A
             <FlipWords words={words} /> <br />
           </div>
