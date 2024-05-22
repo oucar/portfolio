@@ -7,6 +7,7 @@ import { useSectionInView } from "@/lib/hooks";
 import OnurPortrait from "../public/onur.png";
 import { FaGithub, FaLinkedinIn, FaStackOverflow } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import { FlipWords } from "./flip-words";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -26,13 +27,23 @@ export default function Intro() {
     },
     {
       icon: <SiLeetcode />,
-      url: "https://leetcode.com/oucar/"
-    }
+      url: "https://leetcode.com/oucar/",
+    },
   ];
 
   const handleIconClick = (url: any) => {
     window.open(url, "_blank");
   };
+
+  const words = [
+    "Software Engineer.",
+    "Problem Solver.",
+    "Future Leader.",
+    "Team Player.",
+    "Lifelong Learner.",
+    "Creative Thinker.",
+    "Cat and Nature Lover.",
+  ];
 
   return (
     <section
@@ -71,36 +82,60 @@ export default function Intro() {
               delay: 0.1,
               duration: 0.7,
             }}
-          >
-          </motion.span>
+          ></motion.span>
         </div>
       </div>
 
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+        className="mb-4 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hello, I'm Onur.</span>
       </motion.h1>
 
-      <motion.ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800 sm:mt-8">
-        {socialIcons.map((socialIcon, index) => (
-          <motion.li
-            key={index}
-            className="bg-white borderBlack rounded-3xl px-3 py-3 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/20 transition-colors duration-200"
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            onClick={() => handleIconClick(socialIcon.url)}
-            style={{ cursor: "pointer" }}
-          >
-            {socialIcon.icon}
-          </motion.li>
-        ))}
-      </motion.ul>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          type: "tween",
+          duration: 0.2,
+        }}
+      >
+        <div className="flex justify-center items-center px-4 mb-10">
+          <div className="text-4xl mx-auto font-normal">
+            A
+            <FlipWords words={words} /> <br />
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          type: "tween",
+          duration: 0.2,
+        }}
+      >
+        <motion.ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800 sm:mt-8">
+          {socialIcons.map((socialIcon, index) => (
+            <motion.li
+              key={index}
+              className="bg-white borderBlack rounded-3xl px-3 py-3 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/20 transition-colors duration-200"
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              onClick={() => handleIconClick(socialIcon.url)}
+              style={{ cursor: "pointer" }}
+            >
+              {socialIcon.icon}
+            </motion.li>
+          ))}
+        </motion.ul>
+      </motion.div>
 
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
