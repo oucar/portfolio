@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import SectionHeading from "./section-heading";
 import "react-vertical-timeline-component/style.min.css";

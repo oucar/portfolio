@@ -5,7 +5,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import OnurPortrait from "../public/onur.png";
-import { FaGithub, FaLinkedinIn, FaStackOverflow } from "react-icons/fa";
+import { FaBlog, FaGithub, FaLinkedinIn, FaStackOverflow } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { FlipWords } from "./flip-words";
 
@@ -29,6 +29,10 @@ export default function Intro() {
       icon: <SiLeetcode />,
       url: "https://leetcode.com/oucar/",
     },
+    {
+      icon: <FaBlog />,
+      url: "https://blog.ucaronur.com/",
+    }
   ];
 
   const handleIconClick = (url: any) => {

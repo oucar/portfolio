@@ -63,7 +63,6 @@ const GodotFinalVideo = {
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects");
-  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
   return (
     <section id="projects" className="scroll-mt-28">

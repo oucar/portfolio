@@ -20,7 +20,7 @@ export default function About() {
       <p className="mb-3">
         After graduating from Purdue University with a degree in{" "}
         <span className="font-medium">Computer Science</span> and a minor in{" "}
-        <span className="font-medium">Mathematics</span>, I delved into the
+        <span className="font-medium">Mathematics</span>, I dived into the
         realm of professional software development. My journey into the world of
         software development began at the age of 15, sparked by a profound
         interest in problem-solving with the{" "}
