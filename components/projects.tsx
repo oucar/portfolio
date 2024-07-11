@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
@@ -8,6 +9,7 @@ import {
   IconFileBroken,
   IconSignature,
   IconTableColumn,
+  IconBackhoe,
 } from "@tabler/icons-react";
 import SectionHeading from "./section-heading";
 import GodotImage from "@/public/godot_doomlike.png";
@@ -111,12 +113,20 @@ const VideoSkeleton = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <img
-        src={imageSrc}
-        alt="Project Image"
-        className="object-cover w-full h-full rounded-xl transition-opacity duration-300 ease-in-out"
-        style={{ opacity: isHovered ? 0 : 1 }}
-      />
+      {imageSrc ? (
+        <img
+          src={imageSrc}
+          alt="Project Image"
+          className="object-cover w-full h-full rounded-xl transition-opacity duration-300 ease-in-out"
+          style={{ opacity: isHovered ? 0 : 1 }}
+        />
+      ) : (
+        <div className="flex justify-center items-center w-full h-full">
+          <div className="flex justify-center items-center w-1/2 h-1/2">
+            <IconBackhoe className="w-full h-full transition-opacity duration-300 ease-in-out" />
+          </div>
+        </div>
+      )}
 
       {isHovered && (
         <div
@@ -284,5 +294,15 @@ const items: Item[] = [
     imageComponent: <img src={GodotImage.src} alt="Godot Image" />,
     githubLink: "https://github.com/oucar/437-final",
   },
-  // Another APP - alg related
+  // Work In Progress
+  {
+    title: "Work In Progress - ReadmeQuik",
+    description:
+      "Create Markdown files with ease by dragging and dropping pre-made components, or customize them to suit your needs!",
+    header: <VideoSkeleton imageSrc={""} youtubeVideo={""} />,
+    className: "md:col-span-3",
+    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+    imageComponent: <img src={""} alt="ReadmeQuik" />,
+    githubLink: "https://github.com/oucar/ReadmeQuik/",
+  },
 ];
