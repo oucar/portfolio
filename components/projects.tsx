@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { BentoGrid, BentoGridItem } from "./bento-grid";
@@ -11,6 +11,7 @@ import {
   IconTableColumn,
   IconBackhoe,
 } from "@tabler/icons-react";
+import ReactPlayer from "react-player";
 import SectionHeading from "./section-heading";
 import GodotImage from "@/public/godot_doomlike.png";
 import LentilJSX from "@/public/lentil-jsx.png";
@@ -21,7 +22,7 @@ import WatchNotes from "@/public/watch-notes.png";
 import WatchColor from "@/public/watch-color-app.png";
 import GodotFinal from "@/public/437-final.png";
 import Auctions from "@/public/auctions.png";
-import ReactPlayer from "react-player";
+import ReadmeQuik from "@/public/readmequik.png";
 
 interface Item {
   title: string;
@@ -61,6 +62,9 @@ const WatchNotesVideo = {
 };
 const GodotFinalVideo = {
   src: "https://www.youtube.com/embed/zxzgsrURiW8?si=5Z2Ann-Gns_RdWeC",
+};
+const ReadmeQuikVideo = {
+  src: "https://www.youtube.com/embed/0c_MCvtP8Co?si=4ex9EiKL-LpUahPs",
 };
 
 export default function Projects() {
@@ -205,7 +209,7 @@ const items: Item[] = [
   {
     title: "Sorting Algorithm Visualizer",
     description:
-      "Embark on a captivating journey through sorting algorithms with this immersive React-based visualizer. Experience the magic of various sorting techniques as you interactively explore their mechanics and efficiency.",
+      "Embark on a captivating journey through sorting algorithms with this immersive React-based visualizer. Experience the magic of various sorting techniques as you interactively explore their mechanics and efficiency. You can find the live deployment link in the project details on GitHub.",
     header: (
       <VideoSkeleton imageSrc={Sorting.src} youtubeVideo={SortingVideo.src} />
     ),
@@ -296,13 +300,18 @@ const items: Item[] = [
   },
   // Work In Progress
   {
-    title: "Work In Progress - ReadmeQuik",
+    title: "ReadmeQuik",
     description:
-      "Create Markdown files with ease by dragging and dropping pre-made components, or customize them to suit your needs!",
-    header: <VideoSkeleton imageSrc={""} youtubeVideo={""} />,
+      "Effortlessly create Markdown files for project documentation or your GitHub personal page by dragging and dropping pre-made components, or customize them to fit your requirements! You can find the live deployment link in the project details within the GitHub repository.",
+    header: (
+      <VideoSkeleton
+        imageSrc={ReadmeQuik.src}
+        youtubeVideo={ReadmeQuikVideo.src}
+      />
+    ),
     className: "md:col-span-3",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    imageComponent: <img src={""} alt="ReadmeQuik" />,
+    imageComponent: <img src={ReadmeQuik.src} alt="ReadmeQuik" />,
     githubLink: "https://github.com/oucar/ReadmeQuik/",
   },
 ];
