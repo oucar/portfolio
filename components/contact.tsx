@@ -57,14 +57,16 @@ export default function Contact() {
           type="email"
           required
           maxLength={500}
-          placeholder="Your email"
+          placeholder="Resend API is down."
+          disabled
         />
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="message"
-          placeholder="Your message"
+          placeholder="Since Resend API is down due to a recent security breach, I have disabled this form. Please contact me directly at hello@ucaronur.com."
           required
           maxLength={5000}
+          disabled
         />
 
         <div className="flex justify-center mt-3">

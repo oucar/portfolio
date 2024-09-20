@@ -27,7 +27,16 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Software Developer",
+    title: "Software Engineer II",
+    location: "Seismic",
+    description: [
+     "Will be updated soon."
+    ],
+    icon: "work",
+    date: "9/2024 - present",
+  },
+  {
+    title: "Software Engineer I",
     location: "Bastian Solutions",
     description: [
       "- Applied software design patterns and industry best practices to develop a maintainable, high-quality codebase.",
@@ -38,10 +47,10 @@ export const experiencesData = [
       "- Addressed support tickets promptly to ensure timely resolutions for customers, while also collaborating closely with the application support, release engineering, and QA teams post-launch.",
     ],
     icon: "work",
-    date: "1/2023 - Present",
+    date: "1/2023 - 9/2024",
   },
   {
-    title: "Co-op Software Engineer",
+    title: "Software Engineer Intern",
     location: "Navient",
     description: [
       "- Led the development of Vue.js web applications, prioritizing the creation of reusable UI components and mobile-first design principles. Implemented Vuex to streamline data management processes, ensuring efficient application performance.",
