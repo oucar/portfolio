@@ -106,13 +106,13 @@ export const skillsData = [
   "JavaScript",
   "TypeScript",
   "Python",
-  "Java",
 
   // Frameworks and Libraries
   "NHibernate",
   "Entity Framework",
   "LINQ",
   "React.js",
+  "RTL",
   "Next.js",
   "Vue.js",
   "Node.js",

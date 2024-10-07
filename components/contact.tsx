@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
@@ -7,10 +6,8 @@ import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
-
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
-
   return (
     <motion.section
       id="contact"
@@ -37,17 +34,14 @@ export default function Contact() {
         </a>{" "}
         or through this form.
       </p>
-
       <form
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
-
           if (error) {
             toast.error(error);
             return;
           }
-
           toast.success("Email sent successfully!");
         }}
       >
@@ -57,18 +51,15 @@ export default function Contact() {
           type="email"
           required
           maxLength={500}
-          placeholder="Resend API is down."
-          disabled
+          placeholder="Your email"
         />
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="message"
-          placeholder="Since Resend API is down due to a recent security breach, I have disabled this form. Please contact me directly at hello@ucaronur.com."
+          placeholder="Your message"
           required
           maxLength={5000}
-          disabled
         />
-
         <div className="flex justify-center mt-3">
           <SubmitBtn />
         </div>

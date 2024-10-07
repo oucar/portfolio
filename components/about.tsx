@@ -17,11 +17,11 @@ export default function About() {
       id="about"
     >
       <SectionHeading>About me</SectionHeading>
-      <p className="mb-3">
+      <p className="mb-3" ref={ref}>
         After graduating from Purdue University with a degree in{" "}
         <span className="font-medium">Computer Science</span> and a minor in{" "}
-        <span className="font-medium">Mathematics</span>, I dived into the
-        realm of professional software development. My journey into the world of
+        <span className="font-medium">Mathematics</span>, I dived into the realm
+        of professional software development. My journey into the world of
         software development began at the age of 15, sparked by a profound
         interest in problem-solving with the{" "}
         <span className="font-medium">C language</span>. From those early
