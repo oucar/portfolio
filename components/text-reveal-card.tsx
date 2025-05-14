@@ -68,7 +68,7 @@ export const TextRevealCard = ({
       ref={cardRef}
       className={cn(
         "dark:bg-white/10 border dark:border-white/[0.08] bg-white w-11/12 sm:w-[40rem] rounded-lg p-8 relative overflow-hidden",
-        className
+        className,
       )}
     >
       {children}
@@ -132,7 +132,12 @@ export const TextRevealCardTitle = ({
   className?: string;
 }) => {
   return (
-    <h2 className={twMerge("text-[#111827] dark:text-white text-lg mb-2", className)}>
+    <h2
+      className={twMerge(
+        "text-[#111827] dark:text-white text-lg mb-2",
+        className,
+      )}
+    >
       {children}
     </h2>
   );
@@ -146,7 +151,14 @@ export const TextRevealCardDescription = ({
   className?: string;
 }) => {
   return (
-    <p className={twMerge(" text-[#111827ba] dark:text-[#a9a9a9] text-sm", className)}>{children}</p>
+    <p
+      className={twMerge(
+        " text-[#111827ba] dark:text-[#a9a9a9] text-sm",
+        className,
+      )}
+    >
+      {children}
+    </p>
   );
 };
 

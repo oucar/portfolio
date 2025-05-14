@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "lint:prettier": "prettier --write \"**/*.{js,ts,jsx,tsx,json,css,md}\""
   },
   "dependencies": {
     "@react-email/components": "^0.0.11",
@@ -47,6 +49,7 @@
   },
   "devDependencies": {
     "@types/react-vertical-timeline-component": "^3.3.6",
-    "@types/three": "^0.162.0"
+    "@types/three": "^0.162.0",
+    "prettier": "^3.5.3"
   }
 }

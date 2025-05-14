@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 let interval: any;
@@ -63,7 +63,7 @@ export const FlipWords = ({
         }}
         className={cn(
           "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
-          className
+          className,
         )}
         key={currentWord}
       >
@@ -85,4 +85,3 @@ export const FlipWords = ({
     </AnimatePresence>
   );
 };
-

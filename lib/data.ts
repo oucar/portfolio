@@ -29,9 +29,7 @@ export const experiencesData = [
   {
     title: "Software Engineer II",
     location: "Seismic",
-    description: [
-     "Will be updated soon."
-    ],
+    description: ["- Will be updated soon."],
     icon: "work",
     date: "9/2024 - present",
   },
@@ -39,12 +37,12 @@ export const experiencesData = [
     title: "Software Engineer I",
     location: "Bastian Solutions",
     description: [
-      "- Applied software design patterns and industry best practices to develop a maintainable, high-quality codebase.",
-      "- Developed and maintained web and desktop applications using C#, .NET, NHibernate, and SQL.",
-      "- Developed dynamic user interfaces with Vue.js and led Rush-based monorepo projects, integrating custom Vue components via storybooks and enhancing scalability with TypeScript.",
-      "- Created and maintained deployment pipelines using Microsoft Azure and Azure Devops.",
+      "- Architected scalable enterprise applications by applying advanced software design techniques, leveraging SOLID principles and industry-standard design patterns to ensure long-term maintainability and extensibility.",
+      "- Engineered robust web and desktop applications using C#/.NET, integrating NHibernate ORM for efficient data access across SQL Server databases.",
+      "- Spearheaded Vue.js frontend development in Rush-based monorepo architecture, implementing TypeScript for type safety and creating reusable component libraries with Storybook.",
+      "- Established CI/CD pipelines in Azure DevOps, automating build, test, and deployment processes to enhance development velocity and reliability.",
       "- Provided on-site customer support during end-to-end and system integration testing to ensure smooth go-live process.",
-      "- Addressed support tickets promptly to ensure timely resolutions for customers, while also collaborating closely with the application support, release engineering, and QA teams post-launch.",
+      "- Demonstrated exceptional customer service by prioritizing critical support tickets and collaborating cross-functionally with support, QA, and release engineering teams to ensure timely issue resolution.",
     ],
     icon: "work",
     date: "1/2023 - 9/2024",
@@ -53,10 +51,10 @@ export const experiencesData = [
     title: "Software Engineer Intern",
     location: "Navient",
     description: [
-      "- Led the development of Vue.js web applications, prioritizing the creation of reusable UI components and mobile-first design principles. Implemented Vuex to streamline data management processes, ensuring efficient application performance.",
-      "- Utilized Dapper as an ORM within backend services and APIs developed using C#, .NET, and SQL to optimize data retrieval and manipulation for enhanced application efficiency.",
-      "- Facilitated code reviews and merge requests, ensuring codebase integrity and collaboration.",
-      "- Optimized programming procedures with object-oriented principles, enhancing software development efficiency.",
+      "- Led Vue.js frontend development in Rush-based monorepo architecture, implementing TypeScript for type safety and creating reusable component libraries with Storybook.",
+      "- Engineered backend services and APIs using C#/.NET with Dapper ORM for optimized data operations across SQL databases.",
+      "- Led code reviews and managed merge requests, ensuring code quality and fostering a collaborative development environment.",
+      "- Applied object-oriented design principles to optimize application architecture, resulting in improved development efficiency and maintainable codebase structure.",
     ],
     icon: "work",
     date: "5/2022 - 12/2022",
@@ -64,7 +62,7 @@ export const experiencesData = [
 
   {
     title: "Teaching Assistant",
-    location: "Purdue University  ",
+    location: "Purdue University",
     description: [
       "- Used advanced development tools including Git, Vim, Valgrind, and GDB to meticulously identify and rectify diverse software bugs and inefficiencies, with a keen focus on resolving memory leaks and enhancing overall system performance.",
       "- Assessed and graded a multitude of projects authored in C, C++, and Java, delivering comprehensive feedback and guidance to over 60 students, fostering their growth and proficiency in programming concepts.",
@@ -75,7 +73,7 @@ export const experiencesData = [
     date: "10/2021 - 7/2022",
   },
   {
-    title: "Undergraduate Research Assosiate",
+    title: "Undergraduate Research Associate",
     location: "Purdue University  ",
     description: [
       "- Leveraged quantitative analysis tools such as Python, R, SPSS, SAS, and Excel to conduct comprehensive data analysis for diverse university-wide assessment projects, encompassing surveys and research initiatives.",
@@ -106,31 +104,32 @@ export const skillsData = [
   "JavaScript",
   "TypeScript",
   "Python",
+  "Ruby",
 
   // Frameworks and Libraries
   "NHibernate",
   "Entity Framework",
   "LINQ",
   "React.js",
-  "RTL",
   "Next.js",
   "Vue.js",
   "Node.js",
   "Redux",
   "Vuex",
+  "Ruby on Rails",
   "Tailwind CSS",
   "Framer Motion",
+  "i18next",
+  "SWR",
+
+  // Testing
+  "Jest",
+  "RSpec",
+  "MSW",
+  "RTL",
 
   // Databases
   "SQL",
   "MongoDB",
   "PostgreSQL",
-
-  // Development Tools and Practices
-  "Git",
-  "TFS",
-  "Azure DevOps",
-  "Agile",
-  "Waterfall",
-  "vim",
 ] as const;

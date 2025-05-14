@@ -5,7 +5,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import OnurPortrait from "../public/onur.png";
-import { FaBlog, FaGithub, FaItalic, FaLinkedinIn, FaStackOverflow } from "react-icons/fa";
+import {
+  FaBlog,
+  FaGithub,
+  FaItalic,
+  FaLinkedinIn,
+  FaStackOverflow,
+} from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { FlipWords } from "./flip-words";
 
@@ -32,7 +38,7 @@ export default function Intro() {
     {
       icon: <FaItalic />,
       url: "https://blog.ucaronur.com/",
-    }
+    },
   ];
 
   const handleIconClick = (url: any) => {
