@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Onur Ucar | Personal Portfolio",
   description:
-    "Personal Portfolio of Onur Ucar, Purdue School of Science alumni.",
+    "Discover Onur Ucar's portfolio: Purdue Computer Science graduate, software engineer, and technology enthusiast. Explore projects, skills, and contact information.",
 };
 
 export default function RootLayout({
