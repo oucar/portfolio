@@ -9,10 +9,80 @@ import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
+/** @type {import("next").Metadata} */
 export const metadata = {
-  title: "Onur Ucar | Personal Portfolio",
+  metadataBase: new URL("https://www.ucaronur.com"),
+
+  title: {
+    default: "Onur Ucar | Software Engineer",
+    template: "%s | Onur Ucar",
+  },
+
   description:
-    "Discover Onur Ucar's portfolio: Purdue Computer Science graduate, software engineer, and technology enthusiast. Explore projects, skills, and contact information.",
+    "Software Engineer II at Seismic and Purdue CS alumnus. Previously Bastian Solutions & Navient. Building high-performance apps with React/Next.js, TypeScript, C#/.NET, Vue, SQL and more. Explore projects, skills and get in touch.",
+
+  keywords: [
+    "Onur Ucar",
+    "Software Engineer II",
+    "Software Portfolio",
+    "Purdue Computer Science",
+
+    "Seismic",
+    "Bastian Solutions",
+    "Navient",
+
+    "C/C++",
+    "C#",
+    ".NET",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "Ruby",
+    "NHibernate",
+    "Entity Framework",
+    "LINQ",
+    "React",
+    "Next.js",
+    "Vue.js",
+    "Node.js",
+    "Redux",
+    "Vuex",
+    "Ruby on Rails",
+    "Tailwind CSS",
+    "Framer Motion",
+    "i18next",
+    "SWR",
+    "Jest",
+    "RSpec",
+    "MSW",
+    "React Testing Library",
+    "SQL",
+    "MongoDB",
+    "PostgreSQL",
+  ],
+
+  authors: { name: "Onur Ucar", url: "https://www.ucaronur.com" },
+
+  openGraph: {
+    type: "website",
+    url: "https://www.ucaronur.com",
+    siteName: "ucaronur.com",
+    title: "Onur Ucar | Senior Software Engineer",
+    description:
+      "Browse projects, experience and skills of Onur Ucar — Purdue CS grad engineering scalable apps with React/Next.js, TypeScript, and .NET.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Screenshot of ucaronur.com portfolio home page",
+      },
+    ],
+  },
+
+  alternates: {
+    canonical: "https://www.ucaronur.com",
+  },
 };
 
 export default function RootLayout({
